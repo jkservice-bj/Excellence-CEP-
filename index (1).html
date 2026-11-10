@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Excellence au CEP – CM2 Bénin</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#fffdf5;--card:#fff;--tx:#1d2a1d;--mut:#5b6b5b;--pr:#0b7a3b;--pr2:#e8f5ec;--ac:#f5b800;--ok:#0b7a3b;--ko:#c0392b;--bd:#e2e8dc}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a14;--card:#1b261d;--tx:#eef3ea;--mut:#a9b8a9;--pr:#4cc57e;--pr2:#223a2a;--ac:#f5c542;--ok:#4cc57e;--ko:#ff8a7a;--bd:#2d3b2f}}
+:root[data-theme="dark"]{--bg:#121a14;--card:#1b261d;--tx:#eef3ea;--mut:#a9b8a9;--pr:#4cc57e;--pr2:#223a2a;--ac:#f5c542;--ok:#4cc57e;--ko:#ff8a7a;--bd:#2d3b2f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--pr);color:#fff;padding:16px;text-align:center}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.9}
+main{max-width:720px;margin:0 auto;padding:12px}
+.tabs{display:flex;gap:8px;margin:8px 0}
+.tabs button,.chip,.opt,.act{font:inherit;cursor:pointer;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:10px 12px}
+.tabs button{flex:1;font-weight:700}
+.tabs button.on,.chip.on{background:var(--pr);color:#fff;border-color:var(--pr)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chip{padding:7px 11px;font-size:.9rem}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;margin:10px 0}
+h2{margin:.2em 0 .5em;font-size:1.15rem;color:var(--pr)}h3{margin:.8em 0 .3em;font-size:1rem}
+ul{padding-left:1.2em;margin:.3em 0}li{margin:.3em 0}
+.ret{background:var(--pr2);border-left:4px solid var(--ac);padding:8px 10px;border-radius:8px;margin-top:10px;font-size:.95rem}
+.q{font-weight:600;margin:12px 0 6px}.opt{display:block;width:100%;text-align:left;margin:5px 0}
+.opt.ok{background:var(--ok);color:#fff;border-color:var(--ok)}.opt.ko{background:var(--ko);color:#fff;border-color:var(--ko)}
+.sc{font-weight:700;color:var(--pr);margin-top:12px}.act{background:var(--ac);color:#1d2a1d;border-color:var(--ac);font-weight:700;margin-top:10px}
+.sub{display:flex;gap:6px;margin:6px 0}.sub button{flex:1}
+.auth{max-width:420px;margin:16px auto;text-align:center;padding:0;overflow:hidden}
+.band{height:8px;background:linear-gradient(90deg,#008751 33%,#fcd116 33% 66%,#e8112d 66%)}
+.auth .in{padding:18px}.auth h2{font-size:1.5rem;margin:.2em 0}.auth p{color:var(--mut);margin:.2em 0 12px}
+.at{display:flex;gap:6px;margin-bottom:12px}.at button{flex:1;font:inherit;font-weight:700;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:9px;cursor:pointer}
+.at button.on{background:var(--pr);color:#fff;border-color:var(--pr)}
+.auth input{width:100%;font:inherit;padding:11px;margin:5px 0;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx)}
+.auth .act{width:100%;margin-top:10px}#am{color:var(--ko);min-height:1.3em;font-size:.9rem;margin-top:8px}
+#who{display:none;background:var(--pr2);border-radius:12px;padding:10px 12px;margin:8px 0;display:none;justify-content:space-between;align-items:center;gap:8px}
+#who.on{display:flex}#hi{font-weight:700}#who button{font:inherit;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:6px 10px;cursor:pointer}
+.sep{color:var(--mut);font-size:.85rem;margin:12px 0}
+.act:disabled{background:var(--bd);color:var(--mut);border-color:var(--bd);cursor:not-allowed;opacity:.65}
+footer{text-align:center;color:var(--mut);font-size:.8rem;padding:16px}
+</style></head><body>
+<header><h1>🇧🇯 La révision – CEP CM2</h1><p>Éveil Scientifique et Technologique (EST) · Éveil Social (ES)</p></header>
+<main id="auth0">
+<section id="auth" class="card auth"><div class="band"></div><div class="in">
+<h2>🎓 Excellence au CEP</h2><p>Bienvenue ! Connecte-toi pour commencer tes révisions de CM2.</p>
+<button class="act" id="gg" onclick="google()" style="background:#fff;color:#1d2a1d;border:1px solid var(--bd)">🔐 Continuer avec Google</button>
+<div class="sep">ou avec ton email</div>
+<div class="at"><button id="tin" onclick="setTab('in')">Connexion</button><button id="tup" onclick="setTab('up')">Inscription</button></div>
+<div id="nmw" style="display:none"><input id="nm" type="text" placeholder="Ton nom complet" autocomplete="name"></div>
+<input id="em" type="email" placeholder="Ton email (Gmail)" autocomplete="email">
+<input id="pw" type="password" placeholder="Ton mot de passe" autocomplete="current-password" onkeydown="if(event.key==='Enter')go()">
+<button class="act" id="go" onclick="go()">Se connecter</button><div id="am"></div>
+</div></section></main>
+<main id="app" style="display:none">
+<div id="who" class="on"><span id="hi"></span><button onclick="out()">Déconnexion</button></div>
+<div class="tabs" id="subj"></div>
+<div class="chips" id="grp"></div>
+<div class="chips" id="chap"></div>
+<div class="sub" id="mode"></div>
+<div id="out"></div>
+</main>
+<footer>Programme du CM2 – Bénin. Bon courage pour le CEP !</footer>
+<script>
+var D={EST:{"EST":{
+"Circulation sanguine":{l:["Le <b>sang</b> contient : plasma, globules rouges (transportent l’oxygène), globules blancs (défendent le corps) et plaquettes (arrêtent les saignements).","Le <b>cœur</b> est une pompe musclée. Les <b>artères</b> emportent le sang du cœur vers les organes ; les <b>veines</b> le ramènent au cœur ; les <b>capillaires</b> sont de très fins vaisseaux.","La petite circulation va du cœur aux poumons et retour ; la grande circulation va du cœur à tout le corps.","On mesure le <b>pouls</b> au poignet ou au cou : environ 70 à 80 battements par minute chez l’adulte."],r:"Le cœur pompe le sang dans les artères ; les veines le ramènent ; le sang transporte l’oxygène et les nutriments.",q:[["Quels vaisseaux ramènent le sang au cœur ?",["Les artères","Les veines","Les capillaires"],1],["Que transportent les globules rouges ?",["L’oxygène","Les microbes","L’eau seulement"],0],["Où sent-on le pouls ?",["Au poignet","Au genou","À l’oreille"],0]]},
+"Respiration":{l:["L’<b>appareil respiratoire</b> : fosses nasales → pharynx → larynx → trachée → bronches → poumons (alvéoles).","<b>Inspiration</b> : l’air entre, le thorax gonfle. <b>Expiration</b> : l’air sort, le thorax se dégonfle.","L’air inspiré est riche en oxygène ; l’air expiré est riche en gaz carbonique.","Hygiène : respirer par le nez, ne pas fumer, aérer les pièces, éviter la poussière."],r:"Nez → trachée → bronches → poumons : le sang prend l’oxygène et rejette le gaz carbonique.",q:[["Quel organe est le principal de la respiration ?",["Les poumons","L’estomac","Le foie"],0],["Quel gaz rejette-t-on en expirant ?",["Oxygène","Gaz carbonique","Azote seulement"],1],["Quel conduit mène l’air aux bronches ?",["L’œsophage","La trachée","L’intestin"],1]]},
+"Circuit électrique":{l:["Un <b>circuit simple</b> : pile, fils, interrupteur, lampe. Il doit être <b>fermé</b> pour que la lampe s’allume.","<b>Conducteurs</b> : cuivre, fer, aluminium. <b>Isolants</b> : plastique, bois, caoutchouc, verre.","En <b>série</b>, les lampes sont à la suite : si une grille, tout s’éteint. En <b>dérivation</b>, chaque lampe a son propre chemin.","Dangers : ne jamais toucher un fil dénudé, une prise avec les mains mouillées ; le court-circuit peut causer un incendie."],r:"Circuit fermé = courant. Métaux conducteurs ; plastique et bois isolants.",q:[["Quel élément ferme ou ouvre le circuit ?",["La pile","L’interrupteur","La lampe"],1],["Lequel est un conducteur ?",["Le cuivre","Le bois","Le plastique"],0],["Si une lampe grille en série…",["Les autres restent allumées","Tout s’éteint","Rien ne change"],1]]},
+"Machines simples":{l:["Une machine simple aide à faire un travail avec moins d’effort.","Le <b>levier</b> a un point d’appui, une force motrice (effort) et une résistance (charge). Exemples : brouette, pince, ciseaux, balançoire, décapsuleur.","La <b>poulie fixe</b> change la direction de la force (puits, drapeau). La <b>poulie mobile</b> diminue l’effort.","Autre machine simple : le plan incliné (rampe)."],r:"Le levier et la poulie facilitent le travail : soulever, tirer, déplacer.",q:[["La brouette est un exemple de…",["Levier","Pile","Circuit"],0],["La poulie fixe permet de…",["Changer la direction de la force","Voler","Chauffer"],0],["Le point où le levier s’appuie s’appelle…",["Point d’appui","Charge","Pouls"],0]]},
+"Premiers hommes":{l:["Les premiers hommes sont <b>différents de nous</b> : front fuyant, arcades proéminentes, cerveau plus petit, corps plus velu.","Les principaux : Australopithèque, Homo habilis (premiers outils), Homo erectus (maîtrise du feu), puis Homo sapiens (l’homme actuel), apparu en Afrique.","Ils vivaient de chasse, de pêche et de cueillette, étaient nomades et habitaient grottes et abris.","Ils ont taillé la pierre, découvert le feu, fabriqué des outils et ensuite pratiqué l’agriculture."],r:"L’homme a évolué : outils, feu, puis agriculture. Homo sapiens, c’est nous.",q:[["Quel homme a maîtrisé le feu ?",["Homo erectus","Aucun","Un robot"],0],["Les premiers hommes vivaient de…",["Chasse et cueillette","Commerce","Usines"],0],["Nous sommes…",["Homo sapiens","Australopithèque","Homo habilis"],0]]},
+"Énergies autour de nous":{l:["L’<b>énergie</b> permet de faire fonctionner machines, véhicules, lampes, et même notre corps.","Sources autour de nous : soleil, vent, eau, bois, charbon, pétrole, gaz, électricité.","Usages : s’éclairer, cuire, se déplacer, faire marcher les usines. Le soleil donne lumière et chaleur.","Il faut économiser l’énergie : éteindre les lampes inutiles, ne pas gaspiller le carburant."],r:"L’énergie nous éclaire, nous chauffe et fait avancer les machines ; il faut l’économiser.",q:[["Quelle source donne lumière et chaleur ?",["Le soleil","La lune","Le sable"],0],["Une source d’énergie est…",["Le pétrole","Le sable","La craie"],0],["Pour économiser l’énergie, on…",["Éteint les lampes inutiles","Laisse tout allumé","Gaspille"],0]]},
+"Renouvelables ou non":{l:["<b>Énergies renouvelables</b> : ne s’épuisent pas ou se reconstituent : soleil, vent, eau (barrage), biomasse.","<b>Énergies non renouvelables</b> : pétrole, charbon, gaz naturel, uranium ; elles s’épuisent et polluent.","Au Bénin et au Togo, le barrage de Nangbéto sur le Mono produit de l’électricité grâce à l’eau.","Les énergies renouvelables protègent l’environnement : panneaux solaires, éoliennes."],r:"Renouvelables : soleil, vent, eau. Non renouvelables : pétrole, charbon, gaz.",q:[["Quelle énergie est renouvelable ?",["Solaire","Pétrole","Charbon"],0],["Quelle énergie est non renouvelable ?",["Éolienne","Gaz naturel","Hydraulique"],1],["Que produit un barrage ?",["De l’électricité","Du pétrole","Du charbon"],0]]}}},
+ES:{"Histoire":{
+"Colonisation et résistances":{l:["La <b>Conférence de Berlin</b> (1884-1885) fixe les règles du partage de l’Afrique entre puissances européennes.","Causes de la colonisation : matières premières, marchés, puissance politique, prétexte « civilisateur ».","La France conquiert par traités puis par la force. Le Dahomey devient colonie française en 1894 et est intégré à l’Afrique-Occidentale française (AOF).","<b>Résistances</b> : Béhanzin (Dahomey), Samory Touré (Soudan), Bio Guéra (Nikki). Les colonisés refusent la soumission, mais sont vaincus par la supériorité militaire."],r:"Berlin 1884-85 : partage de l’Afrique. 1894 : défaite de Béhanzin, le Dahomey devient colonie française.",q:[["Quelle conférence a organisé le partage de l’Afrique ?",["Berlin","Paris","Londres"],0],["Quel roi du Dahomey a résisté à la France ?",["Béhanzin","Toffa","Agadja"],0],["En quelle année le Dahomey devient-il colonie ?",["1894","1960","1958"],0]]},
+"Loi-cadre, référendum, indépendance":{l:["La <b>loi-cadre de 1956</b> (Gaston Defferre) donne plus d’autonomie aux colonies : conseils de gouvernement, suffrage universel.","Le <b>référendum du 28 septembre 1958</b> propose la Communauté française : le Dahomey vote « oui » (la Guinée vote « non »).","Le Dahomey devient une République autonome le 4 décembre 1958.","L’<b>indépendance</b> est proclamée le <b>1er août 1960</b>. Premier président : Hubert Maga."],r:"1956 : loi-cadre. 1958 : référendum. 1er août 1960 : indépendance.",q:[["Quelle loi accorde l’autonomie interne en 1956 ?",["La loi-cadre","La loi de 1960","La Constitution"],0],["Quelle date est celle de l’indépendance ?",["1er août 1960","28 sept. 1958","4 déc. 1958"],0],["Quel pays a dit « non » au référendum de 1958 ?",["La Guinée","Le Dahomey","Le Togo"],0]]},
+"Organisations internationales":{l:["<b>ONU</b> (Organisation des Nations unies) : maintient la paix et aide au développement. Le Dahomey y est admis le 20 septembre 1960.","<b>UA</b> (Union africaine) : unité et développement de l’Afrique ; elle remplace l’OUA en 2002.","<b>UMOA</b> (Union monétaire ouest-africaine, 1962) : monnaie commune, le franc CFA, émis par la BCEAO ; elle fait partie de l’UEMOA.","Le Bénin participe à ces organisations pour la paix, la coopération et le développement."],r:"ONU : paix mondiale. UA : unité africaine. UMOA : monnaie commune (franc CFA).",q:[["Quelle organisation vise la paix mondiale ?",["ONU","UMOA","UA"],0],["Quelle monnaie utilise l’UMOA ?",["Franc CFA","Euro","Dollar"],0],["UA signifie…",["Union africaine","Union atlantique","Union asiatique"],0]]}},
+"Géographie":{
+"Situation du Bénin":{l:["Le Bénin est en <b>Afrique de l’Ouest</b>, au nord de l’équateur, entre le Togo à l’ouest et le Nigeria à l’est.","Au nord : le Burkina Faso et le Niger. Au sud : l’océan Atlantique (golfe de Guinée), sur environ 125 km de côte.","Superficie : environ 114 763 km². Forme allongée du sud au nord.","Dans le monde : sur le continent africain ; en Afrique : pays côtier d’Afrique de l’Ouest, porte d’entrée pour les pays sans accès à la mer (Niger, Burkina Faso, Mali)."],r:"Bénin : Afrique de l’Ouest, 4 voisins, 125 km de côte sur l’Atlantique.",q:[["Quel océan borde le Bénin ?",["Atlantique","Indien","Pacifique"],0],["Quel pays est à l’ouest ?",["Togo","Nigeria","Niger"],0],["Le Bénin est un pays d’…",["Afrique de l’Ouest","Afrique du Nord","Asie"],0]]},
+"Aspects physiques":{l:["<b>Sud</b> : plaines et plateaux de terre de barre, lagunes, climat subéquatorial (2 saisons des pluies, 2 saisons sèches), forêts et cocotiers.","<b>Centre</b> : collines et plateaux, climat de transition, savane arborée.","<b>Nord</b> : chaîne de l’Atacora (relief le plus élevé), plaines du Borgou, climat soudanien (1 saison des pluies, 1 saison sèche avec l’harmattan), savane.","Le Bénin est un pays surtout de plaines et de bas plateaux."],r:"Sud : 4 saisons, lagunes. Nord : 2 saisons, Atacora, savane.",q:[["Où se trouve la chaîne de l’Atacora ?",["Au nord","Au sud","À l’est"],0],["Le climat du sud est…",["Subéquatorial","Soudanien","Désertique"],0],["Quel vent sec souffle au nord ?",["L’harmattan","La mousson","Le typhon"],0]]},
+"Hydrographie":{l:["<b>Ouémé</b> : le plus long fleuve du Bénin, il se jette dans la lagune de Porto-Novo.","<b>Mono</b> : fleuve frontière avec le Togo ; barrage de Nangbéto.","Au nord : le <b>Niger</b> (frontière avec le Niger) et ses affluents Mékrou, Alibori, Sota ; la Pendjari coule vers le Burkina Faso.","Lacs et lagunes du sud : lac Nokoué, lac Ahémé, lagunes de Porto-Novo et de Grand-Popo."],r:"Ouémé et Mono au sud, Niger et affluents au nord, Nokoué et Ahémé : lacs du sud.",q:[["Quel est le plus long fleuve du Bénin ?",["Ouémé","Mono","Pendjari"],0],["Quel fleuve sépare le Bénin du Togo ?",["Mono","Niger","Ouémé"],0],["Quel lac se trouve près de Cotonou ?",["Nokoué","Tchad","Victoria"],0]]},
+"Peuplement et habitat":{l:["Le Bénin compte plus de 12 millions d’habitants, plus nombreux au sud.","Principales ethnies : Fon, Adja, Yoruba, Bariba, Dendi, Peulh, Otamari (Somba).","Habitat du sud : maisons en dur ; habitat lacustre à Ganvié sur le lac Nokoué.","Habitat du nord : cases en banco et « tata » des Otamari (Atacora) ; les Peulhs ont des huttes d’éleveurs."],r:"Population surtout au sud ; habitat adapté au milieu : lacustre, tata, case.",q:[["Quel village est lacustre ?",["Ganvié","Natitingou","Kandi"],0],["Où la population est-elle la plus dense ?",["Au sud","Au nord","Dans l’Atacora"],0],["Le tata est un habitat…",["Du nord","Du sud","Lacustre"],0]]},
+"Voies de communication":{l:["<b>Routes</b> : routes bitumées (la grande route Cotonou – Malanville au nord), routes en terre et pistes rurales.","<b>Chemin de fer</b> : ligne Cotonou – Parakou. <b>Port</b> de Cotonou, important pour le Niger, le Burkina Faso et le Mali.","<b>Aéroport</b> international de Cotonou. Télécommunications : téléphone, internet, radios.","Les voies de communication facilitent les échanges, le commerce et le déplacement des personnes."],r:"Routes, rail, port et aéroport relient le Bénin à ses voisins et au monde.",q:[["Quelle ville a le grand port ?",["Cotonou","Kandi","Dassa"],0],["Le chemin de fer relie Cotonou à…",["Parakou","Lomé","Niamey"],0],["Les routes servent à…",["Échanger et se déplacer","Dormir","Cultiver"],0]]},
+"Agriculture et élevage":{l:["<b>Sud</b> : palmier à huile, cocotier, maïs, manioc. <b>Centre</b> : igname, manioc, anacardier. <b>Nord</b> : coton, sorgho, mil, riz.","Le <b>coton</b> est le premier produit agricole d’exportation.","<b>Élevage</b> : bovins, ovins, caprins surtout au nord (Peulhs) ; volaille et porcs au sud. <b>Pêche</b> : lagunes, lacs et océan.","Les cultures dépendent du climat et du sol de chaque région."],r:"Sud : palmier. Centre : igname. Nord : coton, bétail.",q:[["Quel produit est le plus exporté ?",["Le coton","Le riz","Le mil"],0],["Où élève-t-on surtout les bovins ?",["Au nord","Au sud","En mer"],0],["Le palmier à huile pousse surtout…",["Au sud","Au nord","Au désert"],0]]},
+"Mines et activités":{l:["<b>Ressources minières</b> : calcaire (ciment), marbre, or, fer, phosphate, sable ; pétrole offshore de Sèmè (exploitation arrêtée).","Au <b>sud</b> : commerce, port, pêche, artisanat, tourisme. Au <b>centre</b> : agriculture et transformation. Au <b>nord</b> : coton, élevage, parcs (Pendjari, W).","Les artisans, les commerçants et l’industrie participent à l’économie.","Le tourisme : Ganvié, Ouidah, parcs nationaux."],r:"Mines : calcaire, marbre, or. Chaque région a ses activités propres.",q:[["Quelle ressource sert à fabriquer le ciment ?",["Le calcaire","L’or","Le sable"],0],["Où se trouve le port ?",["Au sud","Au nord","Au centre"],0],["Le parc de la Pendjari est…",["Au nord","Au sud","Au centre"],0]]}},
+"Civisme":{
+"Code de la route":{l:["Le <b>code de la route</b> fixe les règles pour la sécurité de tous : piétons, cyclistes, motocyclistes, automobilistes.","Feu rouge : on s’arrête. Feu orange : on se prépare à s’arrêter. Feu vert : on passe avec prudence.","Piétons : traverser sur les passages cloutés, marcher sur le trottoir ou à gauche de la route.","Motos : casque obligatoire ; ne pas dépasser la vitesse. Ne jamais conduire après avoir bu ou sans permis."],r:"Respecter le code de la route, c’est protéger sa vie et celle des autres.",q:[["Que signifie le feu rouge ?",["Arrêt","Passage","Vitesse"],0],["Que doit porter le motocycliste ?",["Un casque","Un bonnet","Rien"],0],["Où doit traverser le piéton ?",["Sur le passage clouté","N’importe où","Sur l’autoroute"],0]]},
+"Instances locales":{l:["La <b>commune</b> est dirigée par le maire et le conseil communal.","L’<b>arrondissement</b> est dirigé par le chef d’arrondissement et le conseil d’arrondissement.","Le <b>village</b> ou quartier de ville est dirigé par le chef de village (ou de quartier) et le conseil de village.","Ces autorités gèrent les affaires locales : état civil, marchés, propreté, écoles."],r:"Commune : maire. Arrondissement : chef d’arrondissement. Village : chef de village.",q:[["Qui dirige la commune ?",["Le maire","Le chef de village","Le député"],0],["Qui dirige le village ?",["Le chef de village","Le maire","Le ministre"],0],["L’arrondissement est dirigé par…",["Le chef d’arrondissement","Le roi","Le juge"],0]]},
+"Institutions de l’État (1)":{l:["<b>Présidence de la République</b> : le Président dirige le pays et le gouvernement (pouvoir exécutif).","<b>Assemblée nationale</b> : les députés votent les lois. Le <b>Sénat</b> (chambre haute, installé en 2026) complète le Parlement.","<b>Justice</b> : tribunaux, cours d’appel, <b>Cour suprême</b> (plus haute juridiction pour les affaires judiciaires et administratives).","<b>Cour constitutionnelle</b> : vérifie que les lois respectent la Constitution et proclame les résultats des élections."],r:"Exécutif : Président. Législatif : Assemblée et Sénat. Judiciaire : tribunaux et Cour suprême.",q:[["Qui vote les lois ?",["L’Assemblée nationale","La Cour suprême","Le maire"],0],["Quelle institution vérifie la Constitution ?",["Cour constitutionnelle","HAAC","Le Sénat"],0],["Qui dirige le pays ?",["Le Président","Le chef de village","Le juge"],0]]},
+"Institutions de l’État (2)":{l:["<b>Haute Cour de justice</b> : juge le Président de la République et les membres du gouvernement pour trahison et autres graves fautes.","<b>HAAC</b> (Haute Autorité de l’Audiovisuel et de la Communication) : garantit la liberté de la presse et surveille les médias.","<b>Conseil économique et social (CES)</b> : donne son avis sur les projets de loi économiques, sociaux et culturels.","Ces institutions garantissent la démocratie et l’équilibre des pouvoirs."],r:"HCJ : juge les plus hautes autorités. HAAC : presse. CES : avis économiques et sociaux.",q:[["Quelle institution régule les médias ?",["La HAAC","Le CES","La Cour suprême"],0],["Qui juge le Président pour trahison ?",["La Haute Cour de justice","Le maire","Le chef de village"],0],["CES signifie…",["Conseil économique et social","Cour électorale suprême","Centre éducatif scolaire"],0]]}},
+"Morale":{
+"Politesse et sincérité":{l:["Les <b>marques de politesse</b> : dire bonjour, s’il vous plaît, merci, pardon, saluer ses aînés, laisser sa place.","La <b>sincérité</b> : dire ce que l’on pense vraiment, sans mentir ni faire semblant.","L’<b>honnêteté</b> : ne pas voler, ne pas tricher, rendre ce que l’on trouve.","Ces qualités rendent la vie en société agréable et gagnent la confiance des autres."],r:"Politesse, sincérité et honnêteté : trois qualités du bon élève.",q:[["Que dit-on pour remercier ?",["Merci","Va-t’en","Rien"],0],["La sincérité, c’est…",["Dire la vérité","Mentir","Se moquer"],0],["Je trouve un stylo perdu : je…",["Le rends","Le garde","Le casse"],0]]},
+"Défauts : médisance, calomnie":{l:["La <b>médisance</b> : dire du mal de quelqu’un en son absence, même si c’est vrai.","La <b>calomnie</b> : accuser quelqu’un d’une faute qu’il n’a pas commise, c’est un mensonge qui détruit sa réputation.","Autres défauts : la jalousie, la paresse, la colère, l’égoïsme, la moquerie.","Pour s’en corriger : s’excuser, réparer le tort causé, respecter les autres."],r:"Médisance : dire du mal. Calomnie : accuser faussement. Il faut les éviter.",q:[["Accuser faussement quelqu’un, c’est…",["La calomnie","La politesse","L’honnêteté"],0],["Dire du mal d’un absent, c’est…",["La médisance","La sincérité","La bonté"],0],["Que faire après avoir blessé un camarade ?",["Lui présenter des excuses","L’ignorer","Se moquer"],0]]},
+"Fléaux sociaux":{l:["Les <b>fléaux sociaux</b> nuisent à la société : toxicomanie, alcoolisme, corruption, vol, violence.","<b>Toxicomanie</b> : consommation de drogues ; elle détruit la santé et conduit à la délinquance.","<b>Alcoolisme</b> : abus d’alcool ; il cause maladies, accidents et violences familiales.","<b>Corruption</b> : donner ou recevoir de l’argent ou un cadeau pour obtenir un avantage injuste. Elle freine le développement."],r:"Dire non à la drogue, à l’alcool et à la corruption pour construire un pays prospère.",q:[["La drogue provoque…",["La toxicomanie","La santé","La richesse"],0],["La corruption est…",["Un fléau","Une qualité","Un jeu"],0],["L’abus d’alcool conduit à…",["L’alcoolisme","La sincérité","Le sport"],0]]}}}};
+
+var st={s:"EST",g:null,c:null,m:"lecon"},$=function(i){return document.getElementById(i)};
+function btn(t,cls,f){var b=document.createElement("button");b.textContent=t;b.className=cls||"";b.onclick=f;return b}
+function render(){
+$("chap").style.display=st.m=="defi"?"none":"";
+var G=D[st.s],gk=Object.keys(G);if(!G[st.g])st.g=gk[0];var S=G[st.g],keys=Object.keys(S);if(!st.c||!S[st.c])st.c=keys[0];var gr=$("grp");gr.innerHTML="";if(gk.length>1)gk.forEach(function(k){gr.appendChild(btn(k,"chip"+(k==st.g?" on":""),function(){st.g=k;st.c=null;render()}))});
+var sj=$("subj");sj.innerHTML="";
+[["EST","🔬 EST"],["ES","🌍 ES"]].forEach(function(a){sj.appendChild(btn(a[1],st.s==a[0]?"on":"",function(){st.s=a[0];st.g=null;st.c=null;render()}))});
+var ch=$("chap");ch.innerHTML="";
+keys.forEach(function(k){ch.appendChild(btn(k,"chip"+(k==st.c?" on":""),function(){st.c=k;render()}))});
+var md=$("mode");md.innerHTML="";
+[["lecon","📖 Leçon"],["quiz","📝 Quiz"],["defi","🏆 Défi"]].forEach(function(a){md.appendChild(btn(a[1],"act"+(st.m==a[0]?" on":""),function(){st.m=a[0];render()}))});
+var o=$("out"),c=S[st.c];o.innerHTML="";
+if(st.m=="defi")defi(o);else if(st.m=="lecon"){
+var h='<div class="card"><h2>'+st.c+'</h2><ul>'+c.l.map(function(x){return"<li>"+x+"</li>"}).join("")+'</ul><div class="ret"><b>À retenir :</b> '+c.r+'</div></div>';
+o.innerHTML=h;
+}else quiz(o,c);
+}
+function quiz(o,c){
+var n=0,done=0,card=document.createElement("div");card.className="card";
+card.innerHTML="<h2>Quiz : "+st.c+"</h2>";
+var sc=document.createElement("div");sc.className="sc";
+c.q.forEach(function(it){
+var q=document.createElement("div");q.className="q";q.textContent=it[0];card.appendChild(q);
+var bs=[];it[1].forEach(function(t,i){
+var b=btn(t,"opt",function(){
+if(q.dataset.d)return;q.dataset.d=1;done++;
+bs.forEach(function(x,j){x.disabled=true;if(j==it[2])x.classList.add("ok")});
+if(i==it[2])n++;else b.classList.add("ko");
+sc.textContent="Score : "+n+" / "+done+(done==c.q.length?(n==done?" — Excellent ! 🎉":" — Relis la leçon et réessaie."):"");
+});bs.push(b);card.appendChild(b)});
+});
+card.appendChild(sc);
+card.appendChild(btn("Recommencer","act",render));
+o.appendChild(card);
+}
+var BANK={EST:[[
+"Quel organe pompe le sang dans le corps ?|Le cœur|Le foie|L’estomac",
+"Par où l’air entre-t-il d’abord dans le corps ?|Par le nez|Par l’oreille|Par l’œil",
+"Que faut-il pour que la lampe s’allume ?|Un circuit fermé|Un circuit ouvert|Un fil coupé",
+"Lequel est un exemple de levier ?|La brouette|La pile|Le thermomètre",
+"Quelle énergie vient du soleil ?|L’énergie solaire|L’énergie du charbon|L’énergie du gaz",
+"Les premiers hommes vivaient de…|Chasse et cueillette|Commerce en ligne|Travail en usine",
+"Quel gaz respirons-nous pour vivre ?|L’oxygène|Le gaz carbonique|La fumée",
+"Quels vaisseaux ramènent le sang au cœur ?|Les veines|Les artères|Les bronches",
+"Quel matériau est un isolant ?|Le plastique|Le cuivre|Le fer",
+"À quoi sert une poulie ?|À soulever des charges|À mesurer la température|À fabriquer du sang",
+"Quelle énergie utilise le vent ?|L’énergie éolienne|L’énergie solaire|L’énergie du gaz",
+"Quel organe sert à respirer ?|Les poumons|Les reins|Le cœur",
+"Qu’ont découvert les premiers hommes ?|Le feu|L’électricité|Internet",
+"Quelle énergie est renouvelable ?|Le soleil|Le pétrole|Le charbon",
+"Dans quoi le sang circule-t-il ?|Les vaisseaux sanguins|La trachée|L’œsophage",
+"Un fil électrique dénudé est…|Dangereux|Sans danger|Un isolant",
+"Quel outil est un levier ?|Les ciseaux|Une ampoule|Une pile",
+"La poulie fixe d’un puits permet de…|Changer la direction de la force|Fabriquer de l’eau|Chauffer l’eau",
+"Le pétrole est une énergie…|Non renouvelable|Renouvelable|Inépuisable",
+"Quel gaz rejette-t-on en plus grande quantité en expirant ?|Le gaz carbonique|L’oxygène|L’hélium"],[
+"Quelles cellules du sang transportent l’oxygène ?|Les globules rouges|Les globules blancs|Les plaquettes",
+"Quelles cellules défendent le corps contre les microbes ?|Les globules blancs|Les globules rouges|Les plaquettes",
+"Quels éléments du sang aident à arrêter les saignements ?|Les plaquettes|Les globules rouges|Les bronches",
+"Quel est le bon ordre du trajet de l’air ?|Nez, trachée, bronches, poumons|Nez, bronches, trachée, poumons|Poumons, trachée, nez, bronches",
+"Où l’oxygène passe-t-il dans le sang ?|Dans les alvéoles des poumons|Dans l’estomac|Dans les reins",
+"Dans un circuit en série, si une lampe grille…|Toutes les lampes s’éteignent|Les autres restent allumées|Rien ne change",
+"Quel montage donne à chaque lampe son propre chemin ?|La dérivation|La série|Le court-circuit",
+"Quel danger peut causer un court-circuit ?|Un incendie|Un rhume|Un gain d’énergie",
+"Dans un levier, le point fixe s’appelle…|Le point d’appui|La résistance|L’effort",
+"Quelle poulie diminue l’effort ?|La poulie mobile|La poulie fixe|Aucune",
+"Quel homme préhistorique a fabriqué les premiers outils ?|Homo habilis|Homo sapiens|Un chimpanzé",
+"Où Homo sapiens est-il apparu ?|En Afrique|En Amérique|En Antarctique",
+"Quelle énergie utilise un barrage ?|L’eau|Le vent|Le gaz",
+"Laquelle est une énergie non renouvelable ?|Le gaz naturel|Le vent|Le soleil",
+"Pourquoi faut-il économiser l’énergie ?|Pour limiter la pollution et l’épuisement|Pour fabriquer plus de déchets|Pour couper l’électricité à l’école",
+"Que fait le thorax à l’inspiration ?|Il gonfle|Il se dégonfle|Il s’arrête",
+"Combien de battements par minute, environ, pour le pouls d’un adulte ?|70 à 80|10 à 20|200 à 300",
+"Quelle machine simple aide à monter une charge sur un camion ?|Le plan incliné|Le thermomètre|La pile",
+"Quel matériau conduit le courant ?|Le cuivre|Le bois|Le verre",
+"Quelle énergie utilisent les panneaux solaires ?|Le soleil|Le vent|Le charbon"],[
+"Quelle circulation va du cœur aux poumons et retour ?|La petite circulation|La grande circulation|La circulation lente",
+"Quel liquide compose surtout le plasma ?|L’eau|L’huile|L’air",
+"Quel vaisseau est le plus fin ?|Le capillaire|L’artère|La veine",
+"Quel gaz est plus abondant dans l’air expiré que dans l’air inspiré ?|Le gaz carbonique|L’oxygène|L’azote",
+"Quel muscle aide l’inspiration ?|Le diaphragme|Le biceps|Le cœur",
+"Quel est le rôle des bronches ?|Conduire l’air vers les poumons|Pomper le sang|Digérer les aliments",
+"Pourquoi la fumée de cigarette est-elle dangereuse ?|Elle abîme les poumons|Elle fortifie les poumons|Elle fait grandir",
+"Deux lampes en dérivation : si l’une grille…|L’autre reste allumée|L’autre s’éteint|Elles explosent",
+"Quel appareil ouvre ou ferme un circuit ?|L’interrupteur|La lampe|Le fil isolant",
+"Quelle machine simple utilise un point d’appui ?|Le levier|La pile|Le thermomètre",
+"Dans une brouette, la roue joue le rôle du…|Point d’appui|Charge|Effort",
+"Une poulie fixe sert à…|Changer la direction de la force|Diviser la charge par deux|Supprimer le poids",
+"Quel homme a maîtrisé le feu ?|Homo erectus|Homo habilis|Aucun",
+"Le passage de la vie nomade au village s’appelle…|La sédentarisation|Le nomadisme|La chasse",
+"La biomasse vient…|De matières végétales et animales|Du charbon fossile|Du vent",
+"Quel est l’inconvénient des énergies fossiles ?|Elles polluent et s’épuisent|Elles sont infinies|Elles sont toujours propres",
+"Le barrage de Nangbéto est sur le fleuve…|Mono|Ouémé|Niger",
+"Pourquoi préférer les énergies renouvelables ?|Elles polluent moins et ne s’épuisent pas|Elles coûtent toujours zéro|Elles sont dangereuses",
+"Quel est le trajet du sang oxygéné ?|Poumons → cœur → organes|Organes → poumons → cœur|Cœur → organes → poumons",
+"Quel danger si on branche trop d’appareils sur une prise ?|Surchauffe et incendie|Énergie gratuite|Rien"]],
+ES:[[
+"Quelle est la capitale du Bénin ?|Porto-Novo|Cotonou|Parakou",
+"Quelle est la date de l’indépendance ?|1er août 1960|1er août 1958|1er août 1975",
+"Qui dirige la commune ?|Le maire|Le chef de village|Le roi",
+"Que dit-on pour remercier ?|Merci|Pardon|Bonjour",
+"Quel océan borde le Bénin ?|L’Atlantique|L’Indien|Le Pacifique",
+"Que signifie le feu rouge ?|Arrêt|Passage|Accélérer",
+"Quelle est la devise du Bénin ?|Fraternité – Justice – Travail|Liberté – Égalité – Fraternité|Union – Discipline – Travail",
+"Quel roi a résisté à la France ?|Béhanzin|Houégbadja|Toffa",
+"Où cultive-t-on surtout le coton ?|Au nord|Au sud|Dans l’océan",
+"La calomnie, c’est…|Accuser faussement|Dire la vérité|Aider",
+"Quel fleuve est frontière avec le Togo ?|Le Mono|L’Ouémé|Le Niger",
+"Qui doit porter un casque ?|Le motocycliste|Le piéton|Le passager d’un bus",
+"Quel pays est à l’ouest du Bénin ?|Togo|Nigeria|Niger",
+"L’alcoolisme est…|Un fléau social|Une qualité|Un sport",
+"Qui vote les lois ?|L’Assemblée nationale|Le maire|Le juge",
+"Que signifie ONU ?|Organisation des Nations unies|Organisation nationale universelle|Office nord-africain unifié",
+"L’honnêteté, c’est…|Ne pas voler ni tricher|Mentir|Se moquer",
+"Quel lac est près de Cotonou ?|Nokoué|Tchad|Victoria",
+"Qui dirige le village ?|Le chef de village|Le député|Le ministre",
+"Où est le grand port du Bénin ?|Cotonou|Parakou|Natitingou"],[
+"Quelle conférence a partagé l’Afrique ?|Berlin|Paris|Madrid",
+"En quelle année a lieu le référendum ?|1958|1956|1960",
+"Quelle loi de 1956 donne l’autonomie interne ?|La loi-cadre|La loi de Berlin|La charte de l’ONU",
+"Quel pays a voté « non » en 1958 ?|La Guinée|Le Dahomey|Le Togo",
+"Qui fut le premier président du Dahomey ?|Hubert Maga|Mathieu Kérékou|Patrice Talon",
+"Que signifie UA ?|Union africaine|Union atlantique|Union des armées",
+"Quelle monnaie utilise l’UMOA ?|Le franc CFA|Le dollar|Le naira",
+"Quel relief est le plus élevé au nord ?|L’Atacora|Les plateaux du sud|La lagune",
+"Quel est le plus long fleuve du Bénin ?|L’Ouémé|Le Mono|Le Couffo",
+"Quelle ville est reliée par rail à Cotonou ?|Parakou|Lomé|Abidjan",
+"Quelle région a un climat soudanien ?|Le nord|Le sud|La côte",
+"Le tata est l’habitat des…|Otamari|Pêcheurs de Ganvié|Citadins",
+"Qui juge le Président pour trahison ?|La Haute Cour de justice|Le CES|La HAAC",
+"Quelle institution veille sur la presse ?|La HAAC|La Cour suprême|Le Sénat",
+"Qui dirige l’arrondissement ?|Le chef d’arrondissement|Le maire|Le roi",
+"Qu’est-ce que la médisance ?|Dire du mal d’un absent|Dire la vérité|Aider quelqu’un",
+"Quel fléau consiste à donner de l’argent pour obtenir un avantage injuste ?|La corruption|L’épargne|Le commerce",
+"Quelle ressource sert à fabriquer le ciment ?|Le calcaire|L’or|Le sel",
+"Quel est le premier produit agricole d’exportation ?|Le coton|L’igname|Le maïs",
+"Quelle est la date de la fête nationale ?|1er août|11 décembre|4 décembre"],[
+"En quelle année le Dahomey devient-il colonie française ?|1894|1904|1884",
+"Qui a conçu la loi-cadre de 1956 ?|Gaston Defferre|Charles de Gaulle|Samory Touré",
+"Qui a proposé le référendum de 1958 ?|Charles de Gaulle|Gaston Defferre|Hubert Maga",
+"Quand le Dahomey devient-il République autonome ?|4 décembre 1958|1er août 1960|28 septembre 1958",
+"Quand le Dahomey entre-t-il à l’ONU ?|20 septembre 1960|1er août 1960|1975",
+"Quelle organisation l’UA a-t-elle remplacée ?|L’OUA|L’ONU|L’UMOA",
+"Quel organisme émet le franc CFA de l’UMOA ?|La BCEAO|Le CES|L’ONU",
+"Bio Guéra était roi de…|Nikki|Abomey|Porto-Novo",
+"Quelle est la longueur de la côte béninoise ?|Environ 125 km|Environ 50 km|Environ 600 km",
+"Quelle est la superficie du Bénin ?|Environ 114 763 km²|Environ 1 million km²|Environ 10 000 km²",
+"Quel climat a le sud du Bénin ?|Subéquatorial|Soudanien|Désertique",
+"Quel village est bâti sur pilotis ?|Ganvié|Dassa|Kandi",
+"Quel département correspond à Cotonou ?|Le Littoral|L’Alibori|La Donga",
+"Quel parc national est au nord ?|La Pendjari|Le Nokoué|Ahémé",
+"Quelle institution vérifie la conformité des lois à la Constitution ?|La Cour constitutionnelle|La HAAC|Le CES",
+"Quelle est la plus haute juridiction judiciaire et administrative ?|La Cour suprême|Le tribunal de village|La HAAC",
+"Que fait le CES ?|Il donne son avis sur les projets économiques et sociaux|Il vote les lois|Il juge le Président",
+"Quelle chambre du Parlement a été installée en 2026 ?|Le Sénat|La HAAC|Le CES",
+"Dire du mal d’un absent, même si c’est vrai, c’est…|La médisance|La calomnie|La sincérité",
+"Sur un passage clouté, le piéton doit…|Regarder à gauche et à droite|Courir|Traverser sans regarder"]]};
+BANK.EST.push([
+"Entre quels organes se trouve le cœur ?|Entre les deux poumons|Entre les reins|Sous l’estomac",
+"Quelle cavité du cœur envoie le sang vers tout le corps ?|Le ventricule gauche|L’oreillette droite|La trachée",
+"Que transporte le sang en plus de l’oxygène ?|Les nutriments|L’urine|Les aliments entiers",
+"Comment s’appelle la plus grosse artère du corps ?|L’aorte|La trachée|La bronche",
+"Quel gaz le sang rapporte-t-il des organes vers les poumons ?|Le gaz carbonique|L’oxygène|L’hélium",
+"Quel est le rôle des alvéoles pulmonaires ?|Échanger les gaz avec le sang|Fabriquer le sang|Filtrer l’urine",
+"Comment protéger ses poumons ?|Éviter la fumée et la poussière|Fumer un peu|Se boucher le nez toute la journée",
+"La pile est neuve mais la lampe ne s’allume pas. Cause probable ?|Un fil coupé ou mal branché|Il fait jour|La lampe est trop grande",
+"Si l’interrupteur est ouvert, le courant…|Ne passe pas|Passe plus fort|Passe en sens inverse",
+"Plus l’effort est loin du point d’appui du levier…|Plus l’effort nécessaire est petit|Plus l’effort est grand|Plus le levier casse",
+"Dans une balançoire à bascule, le point d’appui est…|Au milieu|À une extrémité|Absent",
+"Un système de poulies sert à…|Réduire l’effort pour lever une charge|Augmenter le poids|Créer de l’énergie",
+"Quel fossile célèbre de 3 millions d’années a été trouvé en Éthiopie ?|Lucy|Ötzi|Cro-Magnon",
+"Quelle période précède l’invention de l’écriture ?|La Préhistoire|L’époque coloniale|L’ère moderne",
+"Quel geste protège les forêts ?|Utiliser des foyers améliorés|Brûler plus de bois|Couper les jeunes arbres",
+"Le pétrole, le charbon et le gaz sont des énergies…|Fossiles|Du vent|Humaines",
+"Pourquoi dit-on que l’énergie solaire est propre ?|Elle ne produit pas de fumée polluante|Elle ne chauffe jamais|Elle fait de la fumée noire",
+"Quel appareil transforme le vent en électricité ?|Une éolienne|Un barrage|Une lampe",
+"Quel appareil transforme l’énergie de l’eau en électricité ?|Un barrage|Une éolienne|Un panneau solaire",
+"Quel matériau est conducteur ?|L’aluminium|Le caoutchouc|Le verre"],[
+"Pourquoi le pouls augmente-t-il après la course ?|Les muscles ont besoin de plus d’oxygène|Le sang s’arrête|Le cœur dort",
+"Pourquoi respire-t-on plus vite après un effort ?|Pour apporter plus d’oxygène|Pour refroidir le cœur|Pour manger",
+"Quelle partie ferme la trachée quand on avale ?|L’épiglotte|L’alvéole|Le diaphragme",
+"Pourquoi les fils électriques sont-ils entourés de plastique ?|Pour isoler et protéger du courant|Pour les alourdir|Pour conduire le courant",
+"Pourquoi ne pas toucher une prise avec les mains mouillées ?|L’eau conduit le courant|L’eau isole|L’eau chauffe le fil",
+"Quel dispositif protège un circuit en cas de surintensité ?|Le fusible|La poulie|Le levier",
+"Dans une pince coupante, le fil à couper est placé…|Près du point d’appui|Au bout des poignées|Loin de l’articulation",
+"Avec une poulie mobile, la force nécessaire est environ…|La moitié du poids|Le double du poids|Dix fois le poids",
+"Qu’a permis le feu aux premiers hommes ?|Cuire les aliments et se protéger|Voyager en avion|Écrire des livres",
+"Quel changement est lié à l’agriculture ?|La vie en villages|La vie nomade seulement|La chasse exclusive",
+"Quel est un point commun des hommes préhistoriques ?|Ils fabriquaient des outils|Ils utilisaient l’électricité|Ils écrivaient des livres",
+"Pourquoi le charbon est-il une énergie épuisable ?|Il met des millions d’années à se former|Il se renouvelle chaque jour|Il vient du vent",
+"Quel bon geste pour économiser l’électricité ?|Éteindre les appareils inutiles|Laisser les lampes allumées|Ouvrir longtemps le réfrigérateur",
+"Quel gaz augmente avec la combustion des énergies fossiles ?|Le gaz carbonique|L’oxygène|L’hélium",
+"Quel est l’avantage de l’éolienne ?|Elle produit sans polluer|Elle consomme du pétrole|Elle fonctionne sans vent",
+"Le soleil est utile pour…|Sécher les récoltes et produire de l’électricité|Fabriquer du pétrole|Arrêter le vent",
+"Quel est le bon geste de sécurité avec une prise ?|Débrancher en tirant la fiche|Tirer sur le fil|Mouiller la prise",
+"Que se passe-t-il avec une pile usée ?|La lampe brille faiblement ou pas|La lampe brille plus fort|Le fil devient liquide",
+"Quel organe filtre le sang pour fabriquer l’urine ?|Les reins|Le cœur|Les poumons",
+"Le sang riche en oxygène est de couleur…|Rouge vif|Verte|Bleue"]);
+BANK.ES.push([
+"Quelle ville fut la capitale du royaume du Danhomè ?|Abomey|Natitingou|Kandi",
+"Quel roi a été exilé en Martinique ?|Béhanzin|Ghézo|Agadja",
+"Samory Touré a résisté à la France en…|Afrique de l’Ouest|Afrique australe|Asie",
+"Que signifie AOF ?|Afrique-Occidentale française|Afrique-Orientale française|Amérique de l’Ouest française",
+"Quel était le but du référendum de 1958 ?|Choisir la Communauté française ou la rupture|Élire un maire|Choisir le drapeau",
+"Que signifie UEMOA ?|Union économique et monétaire ouest-africaine|Union européenne des marchés|Union des écoles",
+"Où se trouve le siège de la BCEAO ?|Dakar|Cotonou|Abidjan",
+"Quel département a pour chef-lieu Natitingou ?|L’Atacora|Le Borgou|Le Zou",
+"Quel est le chef-lieu du Borgou ?|Parakou|Natitingou|Abomey",
+"Quel est le chef-lieu du Zou ?|Abomey|Parakou|Cotonou",
+"Quelle céréale est cultivée au nord ?|Le sorgho|Le cocotier|Le cacao",
+"Quelle ville du nord termine la route vers le Niger ?|Malanville|Ouidah|Grand-Popo",
+"Que pratiquent les populations des lagunes ?|La pêche|L’élevage de chameaux|La culture du blé",
+"Que signifie un feu orange ?|Se préparer à s’arrêter|Accélérer|Passer sans regarder",
+"Que doit faire un conducteur à un passage piéton ?|Ralentir et laisser passer|Klaxonner|Accélérer",
+"Quel est un droit de l’enfant ?|Aller à l’école|Travailler toute la journée|Conduire une moto",
+"Quel est un devoir de l’élève ?|Respecter le règlement|Arriver en retard|Casser les tables",
+"Quel fléau détruit la santé et le cerveau ?|La drogue|Le sport|La lecture",
+"La sincérité s’oppose à…|L’hypocrisie|La politesse|La solidarité",
+"Que fait un élève poli en entrant en classe ?|Il salue|Il crie|Il ne dit rien"],[
+"Pourquoi les puissances ont-elles partagé l’Afrique ?|Pour ses ressources et ses marchés|Pour aider gratuitement|Pour construire des écoles seulement",
+"Quel roi du Danhomè a régné avant Béhanzin ?|Glèlè|Houégbadja|Agadja",
+"Qui fut le père de Béhanzin ?|Glèlè|Ghézo|Toffa",
+"Quel événement a eu lieu en 1990 au Bénin ?|La Conférence nationale|L’indépendance|Le référendum de 1958",
+"Quelle Constitution date du 11 décembre 1990 ?|La Constitution du Renouveau démocratique|La loi-cadre|Le code de la route",
+"Quel pays n’est pas voisin du Bénin ?|Le Ghana|Le Togo|Le Nigeria",
+"Quel pays voisin n’a pas d’accès à la mer ?|Le Niger|Le Togo|Le Nigeria",
+"Quel golfe borde le sud du Bénin ?|Le golfe de Guinée|Le golfe du Mexique|Le golfe Persique",
+"Pourquoi le sud est-il plus peuplé ?|Villes, port et terres fertiles|Il est désertique|Il est montagneux",
+"Quelle activité est typique du nord ?|L’élevage de bovins|La pêche lagunaire|La culture du cocotier",
+"Quel est le rôle d’un port ?|Recevoir et envoyer des marchandises|Fabriquer du ciment|Cultiver le coton",
+"Quel est l’avantage du chemin de fer ?|Transporter de lourdes charges|Voler|Cultiver",
+"Que fait le pouvoir exécutif ?|Appliquer les lois|Voter les lois|Juger les citoyens",
+"Quel pouvoir juge les citoyens ?|Le pouvoir judiciaire|Le pouvoir exécutif|Le pouvoir législatif",
+"Le Parlement béninois comprend…|L’Assemblée nationale et le Sénat|La Cour suprême seulement|Le CES seulement",
+"Pourquoi existe-t-il des feux tricolores ?|Pour réguler la circulation et sauver des vies|Pour décorer|Pour faire du bruit",
+"Quelle différence entre calomnie et médisance ?|Calomnie : accusation fausse ; médisance : dire du mal d’un absent|Calomnie : dire du bien ; médisance : se taire|Aucune différence",
+"Que faire face à la corruption ?|La refuser et la dénoncer|L’imiter|S’en moquer",
+"Quel danger l’alcool présente-t-il pour un conducteur ?|Il provoque des accidents|Il rend plus prudent|Il guérit",
+"Un élève honnête trouve de l’argent à l’école. Il…|Le remet au maître|Le dépense|Le cache"]);
+var U={EST:1,ES:1},LN=["Facile","Moyen","Difficile","Très difficile","Excellence"];
+function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function defi(o){
+var s=st.s,c=document.createElement("div");c.className="card";
+c.innerHTML="<h2>🏆 Défi "+s+"</h2><p>5 niveaux de 20 questions mélangées"+(s=="ES"?" (histoire, géographie, civisme, morale)":" (tous les chapitres)")+". Obtiens au moins 10/20 pour débloquer le niveau suivant.</p>";
+LN.forEach(function(n,i){var b=btn((i+1>U[s]?"🔒 ":"")+"Niveau "+(i+1)+" · "+n,"act",function(){run(o,i+1)});b.disabled=i+1>U[s];b.style.display="block";b.style.width="100%";c.appendChild(b)});
+o.appendChild(c);
+}
+function run(o,lv){
+var s=st.s,L=sh(BANK[s][lv-1]).map(function(x){return x.split("|")}),i=0,n=0;
+function show(){
+o.innerHTML="";var it=L[i],c=document.createElement("div");c.className="card";
+c.innerHTML="<h2>Niveau "+lv+" · Question "+(i+1)+"/20</h2>";
+var q=document.createElement("div");q.className="q";q.textContent=it[0];c.appendChild(q);
+var nx=btn(i==19?"Voir le résultat":"Suivant","act",function(){i++;i<20?show():end()});nx.style.display="none";
+var bs=[];sh(it.slice(1)).forEach(function(t){var b=btn(t,"opt",function(){
+bs.forEach(function(x){x.disabled=true;if(x.textContent==it[1])x.classList.add("ok")});
+if(t==it[1])n++;else b.classList.add("ko");nx.style.display="block"});bs.push(b);c.appendChild(b)});
+c.appendChild(nx);o.appendChild(c);
+}
+function end(){
+o.innerHTML="";var c=document.createElement("div");c.className="card";var ok=n>=10,m="";
+if(ok&&lv==U[s]&&lv<5){U[s]=lv+1;saveU();m=" 🔓 Niveau "+(lv+1)+" débloqué !"}
+c.innerHTML="<h2>Résultat : "+n+" / 20</h2><p>"+(ok?(lv==5?"Bravo, tu es prêt pour le CEP ! 🎉":"Bravo, tu as la moyenne !")+m:"Il faut au moins 10/20. Relis les leçons et réessaie.")+"</p>";
+c.appendChild(btn(ok&&lv<5?"Continuer":"Recommencer","act",function(){render()}));
+o.appendChild(c);
+}
+show();
+}
+var user=null,tab="in";
+function msg(t){$("am").textContent=t}
+function setTab(t){tab=t;$("nmw").style.display=t=="up"?"block":"none";$("go").textContent=t=="up"?"S’inscrire":"Se connecter";$("tin").className=t=="in"?"on":"";$("tup").className=t=="up"?"on":"";msg("")}
+function enterApp(name,u0){U=u0||{EST:1,ES:1};$("auth").style.display="none";$("app").style.display="block";$("hi").textContent="Bonjour, "+name+" ! 👋";st.m="defi";render()}
+function showAuth(){$("app").style.display="none";$("auth").style.display="block";$("pw").value="";setTab("in")}
+function saveU(){}
+render();
+</script>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {getAuth,GoogleAuthProvider,signInWithPopup,createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile,signOut,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import {getFirestore,doc,getDoc,setDoc} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+/* 1) Colle ici la configuration de ton projet Firebase (Paramètres du projet > Tes applications > Web) */
+const cfg={apiKey:"AIzaSyBlRERGpK58Ji0pjVzFGPFP-_B1_OYTlGI",authDomain:"excellence-cep-442aa.firebaseapp.com",projectId:"excellence-cep-442aa",storageBucket:"excellence-cep-442aa.firebasestorage.app",messagingSenderId:"875715655682",appId:"1:875715655682:web:ce1a74795e690567994f1b"};
+const ok=cfg.apiKey!=="COLLE_ICI";
+let auth,db,uid=null;
+if(ok){const app=initializeApp(cfg);auth=getAuth(app);auth.languageCode="fr";db=getFirestore(app)}
+const ERR={"auth/invalid-credential":"Email ou mot de passe incorrect.","auth/invalid-email":"Email non valide.","auth/email-already-in-use":"Cet email est déjà inscrit. Clique sur « Connexion ».","auth/weak-password":"Mot de passe trop court (6 caractères minimum).","auth/popup-closed-by-user":"Fenêtre Google fermée.","auth/network-request-failed":"Pas de connexion internet.","auth/too-many-requests":"Trop d’essais. Réessaie dans quelques minutes."};
+const fail=e=>msg(ERR[e.code]||"Une erreur est survenue. Réessaie.");
+const nameOf=u=>u.displayName||(u.email||"").split("@")[0];
+async function enter(u){
+uid=u.uid;let p=null;
+try{const s=await getDoc(doc(db,"users",uid));if(s.exists())p=s.data().U}catch(e){}
+enterApp(nameOf(u),p);
+}
+window.saveU=function(){if(!uid)return;setDoc(doc(db,"users",uid),{U:U,email:auth.currentUser.email,name:nameOf(auth.currentUser)},{merge:true}).catch(()=>{})};
+window.google=function(){if(!ok)return msg("Configuration Firebase manquante.");signInWithPopup(auth,new GoogleAuthProvider()).catch(fail)};
+window.go=async function(){
+if(!ok)return msg("Configuration Firebase manquante.");
+const em=$("em").value.trim(),pw=$("pw").value,nm=$("nm").value.trim();
+if(tab=="up"&&!nm)return msg("Écris ton nom complet.");
+try{
+if(tab=="up"){const c=await createUserWithEmailAndPassword(auth,em,pw);await updateProfile(c.user,{displayName:nm});await enter(auth.currentUser)}
+else await signInWithEmailAndPassword(auth,em,pw);
+}catch(e){fail(e)}
+};
+window.out=function(){uid=null;if(ok)signOut(auth)};
+if(ok)onAuthStateChanged(auth,u=>{if(u)enter(u);else showAuth()});else showAuth();
+</script>
+</body></html>
