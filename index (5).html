@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Excellence au CEP – CM2 Bénin</title>
+<link id="fav" rel="icon" type="image/png">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#fffdf5;--card:#fff;--tx:#1d2a1d;--mut:#5b6b5b;--pr:#0b7a3b;--pr2:#e8f5ec;--ac:#f5b800;--ok:#0b7a3b;--ko:#c0392b;--bd:#e2e8dc}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a14;--card:#1b261d;--tx:#eef3ea;--mut:#a9b8a9;--pr:#4cc57e;--pr2:#223a2a;--ac:#f5c542;--ok:#4cc57e;--ko:#ff8a7a;--bd:#2d3b2f}}
+:root[data-theme="dark"]{--bg:#121a14;--card:#1b261d;--tx:#eef3ea;--mut:#a9b8a9;--pr:#4cc57e;--pr2:#223a2a;--ac:#f5c542;--ok:#4cc57e;--ko:#ff8a7a;--bd:#2d3b2f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--pr);color:#fff;padding:16px;text-align:center}
+header h1{margin:0;font-size:1.25rem}header p{margin:4px 0 0;font-size:.85rem;opacity:.9}
+main{max-width:720px;margin:0 auto;padding:12px}
+.tabs{display:flex;gap:8px;margin:8px 0}
+.tabs button,.chip,.opt,.act{font:inherit;cursor:pointer;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:10px 12px}
+.tabs button{flex:1;font-weight:700}
+.tabs button.on,.chip.on{background:var(--pr);color:#fff;border-color:var(--pr)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chip{padding:7px 11px;font-size:.9rem}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;margin:10px 0}
+h2{margin:.2em 0 .5em;font-size:1.15rem;color:var(--pr)}h3{margin:.8em 0 .3em;font-size:1rem}
+ul{padding-left:1.2em;margin:.3em 0}li{margin:.3em 0}
+.ret{background:var(--pr2);border-left:4px solid var(--ac);padding:8px 10px;border-radius:8px;margin-top:10px;font-size:.95rem}
+.q{font-weight:600;margin:12px 0 6px}.opt{display:block;width:100%;text-align:left;margin:5px 0}
+.opt.ok{background:var(--ok);color:#fff;border-color:var(--ok)}.opt.ko{background:var(--ko);color:#fff;border-color:var(--ko)}
+.sc{font-weight:700;color:var(--pr);margin-top:12px}.act{background:var(--ac);color:#1d2a1d;border-color:var(--ac);font-weight:700;margin-top:10px}
+.sub{display:flex;gap:6px;margin:6px 0}.sub button{flex:1}
+.auth{max-width:420px;margin:16px auto;text-align:center;padding:0;overflow:hidden}
+.band{height:8px;background:linear-gradient(90deg,#008751 33%,#fcd116 33% 66%,#e8112d 66%)}
+.auth .in{padding:18px}.auth h2{font-size:1.5rem;margin:.2em 0}.auth p{color:var(--mut);margin:.2em 0 12px}
+.at{display:flex;gap:6px;margin-bottom:12px}.at button{flex:1;font:inherit;font-weight:700;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:9px;cursor:pointer}
+.at button.on{background:var(--pr);color:#fff;border-color:var(--pr)}
+.auth input{width:100%;font:inherit;padding:11px;margin:5px 0;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx)}
+.auth .act{width:100%;margin-top:10px}#am{color:var(--ko);min-height:1.3em;font-size:.9rem;margin-top:8px}
+#who{display:none;background:var(--pr2);border-radius:12px;padding:10px 12px;margin:8px 0;display:none;justify-content:space-between;align-items:center;gap:8px}
+#who.on{display:flex}#hi{font-weight:700}#who button{font:inherit;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:6px 10px;cursor:pointer}
+.sep{color:var(--mut);font-size:.85rem;margin:12px 0}
+.act:disabled{background:var(--bd);color:var(--mut);border-color:var(--bd);cursor:not-allowed;opacity:.65}
+.stu{border-top:1px solid var(--bd);padding:10px 0}.stu b{display:block}.stu small{color:var(--mut);display:block}
+#cd{width:100%;font:inherit;padding:11px;margin:6px 0;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);text-transform:uppercase}
+.ct{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0}.ct a{color:var(--pr);font-weight:700;text-decoration:none;border:1px solid var(--bd);background:var(--card);border-radius:10px;padding:8px 12px}.cr{font-size:.75rem;margin-top:6px}
+footer{text-align:center;color:var(--mut);font-size:.8rem;padding:16px}
+body{background-image:radial-gradient(circle at 50% -8%,#f2dd9a66,transparent 45%)}
+header{background:radial-gradient(circle at 50% 0%,#2b2208 0%,#050505 68%);color:#f1dc9a;padding:20px 16px 16px}
+header::after{content:"";display:block;height:4px;margin:16px -16px -16px;background:linear-gradient(90deg,#008751 33%,#fcd116 33% 66%,#e8112d 66%)}
+.logo{width:116px;height:116px;border-radius:24px;display:block;margin:0 auto 8px;box-shadow:0 0 0 1px #b8923c66,0 10px 30px #000a,0 0 40px #d4a73a33}
+header h1{font-size:1.45rem;letter-spacing:.4px;background:linear-gradient(180deg,#fff0b0,#e0aa38 55%,#a8771f);-webkit-background-clip:text;background-clip:text;color:transparent}
+header p{color:#cdbb86;opacity:1;font-size:.82rem}
+.card{border:1px solid #e8d79e;box-shadow:0 8px 24px #0000000d;border-radius:16px;animation:up .45s ease both}
+@keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.act{background:linear-gradient(180deg,#fbe08a,#e2aa22);color:#2a1d00;border-color:#d39a1b;box-shadow:0 2px 0 #b9831688}
+.act.on,.tabs button.on,.chip.on{background:linear-gradient(180deg,#12934a,#0b7a3b);color:#fff;border-color:#0b7a3b}
+.auth{border:1px solid #e0c36a;box-shadow:0 12px 36px #c9a24a26}
+.auth h2{background:linear-gradient(180deg,#0f9a4c,#075f2d);-webkit-background-clip:text;background-clip:text;color:transparent}
+footer{background:#050505;color:#cdbb86;margin-top:28px;padding:20px 16px;border-top:4px solid #c9a24a}
+.flogo{width:64px;height:64px;border-radius:14px;margin-bottom:6px}
+.ct a{background:#15110a;color:#f1d98b;border-color:#6b5420}
+.cr{color:#a8956a}
+</style></head><body>
+<header><img class="lg logo" alt="Logo JK Bisness &amp; Sons"><h1>Excellence au CEP</h1><p>CM2 · Bénin<br>Éveil Scientifique et Technologique (EST) · Éveil Social (ES)</p></header>
+<main id="auth0">
+<section id="auth" class="card auth"><div class="band"></div><div class="in">
+<h2>🎓 Excellence au CEP</h2><p>Bienvenue ! Connecte-toi pour commencer tes révisions de CM2.</p>
+<button class="act" id="gg" onclick="google()" style="background:#fff;color:#1d2a1d;border:1px solid var(--bd)">🔐 Continuer avec Google</button>
+<div class="sep">ou avec ton email</div>
+<div class="at"><button id="tin" onclick="setTab('in')">Connexion</button><button id="tup" onclick="setTab('up')">Inscription</button></div>
+<div id="nmw" style="display:none"><input id="nm" type="text" placeholder="Ton nom complet" autocomplete="name"></div>
+<input id="em" type="email" placeholder="Ton email (Gmail)" autocomplete="email">
+<input id="pw" type="password" placeholder="Ton mot de passe" autocomplete="current-password" onkeydown="if(event.key==='Enter')go()">
+<button class="act" id="go" onclick="go()">Se connecter</button><div id="am"></div>
+</div></section></main>
+<main id="app" style="display:none">
+<div id="who" class="on"><span id="hi"></span><span><button id="tb" style="display:none" onclick="dash()">📊 Suivi</button> <button onclick="out()">Déconnexion</button></span></div>
+<div id="dash" style="display:none"><div class="card"><h2>📊 Suivi des élèves</h2>
+<h3>🔑 Codes d’accès</h3><div class="sub"><button class="act" onclick="gen(2)">➕ Code 2 mois</button><button class="act" onclick="gen(4)">➕ Code 4 mois</button></div><div id="nc"></div>
+<p><small>Codes disponibles (touche pour copier) :</small></p><div id="cl" class="chips"></div>
+<h3>Élèves</h3><p id="dn"></p><div id="dl"></div></div></div>
+<div id="acces" style="display:none"><div class="card"><h2>🔑 Code d’accès</h2><p>Entre le code donné par ton enseignant pour commencer les quiz.</p><input id="cd" placeholder="CEP-XXXX-XXXX" autocapitalize="characters" onkeydown="if(event.key==='Enter')redeem()"><button class="act" style="width:100%" onclick="redeem()">Valider le code</button><div id="cm" style="color:var(--ko);margin-top:8px"></div></div></div>
+<div class="tabs" id="subj"></div>
+<div class="chips" id="grp"></div>
+<div class="chips" id="chap"></div>
+<div class="sub" id="mode"></div>
+<div id="out"></div>
+</main>
+<footer>
+<img class="lg flogo" alt="Logo JK Bisness &amp; Sons">
+<div>Programme du CM2 – Bénin. Bon courage pour le CEP !</div>
+<div class="ct"><a href="https://wa.me/2290196168161" target="_blank" rel="noopener">💬 WhatsApp : 01 96 16 81 61</a><a href="tel:+2290140296308">📞 Tél : 01 40 29 63 08</a></div>
+<div class="cr">© 2026 Joseph KUITA. Tous droits réservés.<br>Toute reproduction ou copie du contenu sans autorisation est interdite.</div>
+</footer>
+<script>
+var D={EST:{"EST":{
+"Circulation sanguine":{l:["Le <b>sang</b> contient : plasma, globules rouges (transportent l’oxygène), globules blancs (défendent le corps) et plaquettes (arrêtent les saignements).","Le <b>cœur</b> est une pompe musclée. Les <b>artères</b> emportent le sang du cœur vers les organes ; les <b>veines</b> le ramènent au cœur ; les <b>capillaires</b> sont de très fins vaisseaux.","La petite circulation va du cœur aux poumons et retour ; la grande circulation va du cœur à tout le corps.","On mesure le <b>pouls</b> au poignet ou au cou : environ 70 à 80 battements par minute chez l’adulte."],r:"Le cœur pompe le sang dans les artères ; les veines le ramènent ; le sang transporte l’oxygène et les nutriments.",q:[["Quels vaisseaux ramènent le sang au cœur ?",["Les artères","Les veines","Les capillaires"],1],["Que transportent les globules rouges ?",["L’oxygène","Les microbes","L’eau seulement"],0],["Où sent-on le pouls ?",["Au poignet","Au genou","À l’oreille"],0]]},
+"Respiration":{l:["L’<b>appareil respiratoire</b> : fosses nasales → pharynx → larynx → trachée → bronches → poumons (alvéoles).","<b>Inspiration</b> : l’air entre, le thorax gonfle. <b>Expiration</b> : l’air sort, le thorax se dégonfle.","L’air inspiré est riche en oxygène ; l’air expiré est riche en gaz carbonique.","Hygiène : respirer par le nez, ne pas fumer, aérer les pièces, éviter la poussière."],r:"Nez → trachée → bronches → poumons : le sang prend l’oxygène et rejette le gaz carbonique.",q:[["Quel organe est le principal de la respiration ?",["Les poumons","L’estomac","Le foie"],0],["Quel gaz rejette-t-on en expirant ?",["Oxygène","Gaz carbonique","Azote seulement"],1],["Quel conduit mène l’air aux bronches ?",["L’œsophage","La trachée","L’intestin"],1]]},
+"Circuit électrique":{l:["Un <b>circuit simple</b> : pile, fils, interrupteur, lampe. Il doit être <b>fermé</b> pour que la lampe s’allume.","<b>Conducteurs</b> : cuivre, fer, aluminium. <b>Isolants</b> : plastique, bois, caoutchouc, verre.","En <b>série</b>, les lampes sont à la suite : si une grille, tout s’éteint. En <b>dérivation</b>, chaque lampe a son propre chemin.","Dangers : ne jamais toucher un fil dénudé, une prise avec les mains mouillées ; le court-circuit peut causer un incendie."],r:"Circuit fermé = courant. Métaux conducteurs ; plastique et bois isolants.",q:[["Quel élément ferme ou ouvre le circuit ?",["La pile","L’interrupteur","La lampe"],1],["Lequel est un conducteur ?",["Le cuivre","Le bois","Le plastique"],0],["Si une lampe grille en série…",["Les autres restent allumées","Tout s’éteint","Rien ne change"],1]]},
+"Machines simples":{l:["Une machine simple aide à faire un travail avec moins d’effort.","Le <b>levier</b> a un point d’appui, une force motrice (effort) et une résistance (charge). Exemples : brouette, pince, ciseaux, balançoire, décapsuleur.","La <b>poulie fixe</b> change la direction de la force (puits, drapeau). La <b>poulie mobile</b> diminue l’effort.","Autre machine simple : le plan incliné (rampe)."],r:"Le levier et la poulie facilitent le travail : soulever, tirer, déplacer.",q:[["La brouette est un exemple de…",["Levier","Pile","Circuit"],0],["La poulie fixe permet de…",["Changer la direction de la force","Voler","Chauffer"],0],["Le point où le levier s’appuie s’appelle…",["Point d’appui","Charge","Pouls"],0]]},
+"Premiers hommes":{l:["Les premiers hommes sont <b>différents de nous</b> : front fuyant, arcades proéminentes, cerveau plus petit, corps plus velu.","Les principaux : Australopithèque, Homo habilis (premiers outils), Homo erectus (maîtrise du feu), puis Homo sapiens (l’homme actuel), apparu en Afrique.","Ils vivaient de chasse, de pêche et de cueillette, étaient nomades et habitaient grottes et abris.","Ils ont taillé la pierre, découvert le feu, fabriqué des outils et ensuite pratiqué l’agriculture."],r:"L’homme a évolué : outils, feu, puis agriculture. Homo sapiens, c’est nous.",q:[["Quel homme a maîtrisé le feu ?",["Homo erectus","Aucun","Un robot"],0],["Les premiers hommes vivaient de…",["Chasse et cueillette","Commerce","Usines"],0],["Nous sommes…",["Homo sapiens","Australopithèque","Homo habilis"],0]]},
+"Énergies autour de nous":{l:["L’<b>énergie</b> permet de faire fonctionner machines, véhicules, lampes, et même notre corps.","Sources autour de nous : soleil, vent, eau, bois, charbon, pétrole, gaz, électricité.","Usages : s’éclairer, cuire, se déplacer, faire marcher les usines. Le soleil donne lumière et chaleur.","Il faut économiser l’énergie : éteindre les lampes inutiles, ne pas gaspiller le carburant."],r:"L’énergie nous éclaire, nous chauffe et fait avancer les machines ; il faut l’économiser.",q:[["Quelle source donne lumière et chaleur ?",["Le soleil","La lune","Le sable"],0],["Une source d’énergie est…",["Le pétrole","Le sable","La craie"],0],["Pour économiser l’énergie, on…",["Éteint les lampes inutiles","Laisse tout allumé","Gaspille"],0]]},
+"Renouvelables ou non":{l:["<b>Énergies renouvelables</b> : ne s’épuisent pas ou se reconstituent : soleil, vent, eau (barrage), biomasse.","<b>Énergies non renouvelables</b> : pétrole, charbon, gaz naturel, uranium ; elles s’épuisent et polluent.","Au Bénin et au Togo, le barrage de Nangbéto sur le Mono produit de l’électricité grâce à l’eau.","Les énergies renouvelables protègent l’environnement : panneaux solaires, éoliennes."],r:"Renouvelables : soleil, vent, eau. Non renouvelables : pétrole, charbon, gaz.",q:[["Quelle énergie est renouvelable ?",["Solaire","Pétrole","Charbon"],0],["Quelle énergie est non renouvelable ?",["Éolienne","Gaz naturel","Hydraulique"],1],["Que produit un barrage ?",["De l’électricité","Du pétrole","Du charbon"],0]]}}},
+ES:{"Histoire":{
+"Colonisation française":{l:["<b>Période</b> : surtout de 1880 à 1914, après la Conférence de Berlin (1884-1885).","<b>Causes</b> : économiques (matières premières, marchés), politiques (rivalités entre puissances, prestige), humanitaires et religieuses (« mission civilisatrice », évangélisation).","<b>Agents</b> : explorateurs (Savorgnan de Brazza), missionnaires, commerçants, militaires (Faidherbe, Gallieni) et administrateurs.","<b>Conséquences</b> : positives (routes, chemins de fer, écoles, hôpitaux) ; négatives (perte de souveraineté, impôt, travail forcé, cultures imposées, frontières artificielles)."],r:"Période 1880-1914. Causes : économiques, politiques, humanitaires. Agents : explorateurs, missionnaires, militaires, administrateurs.",q:[["Quel explorateur a travaillé pour la France au Congo ?",["Savorgnan de Brazza","Samory Touré","Béhanzin"],0],["Quelle est une cause économique de la colonisation ?",["La recherche de matières premières et de marchés","Le sport","La musique"],0],["Quelle est une conséquence négative ?",["Le travail forcé et l’impôt","Les écoles","Les hôpitaux"],0]]},
+"Résistances au Dahomey":{l:["<b>Béhanzin</b>, roi d’Abomey (1889-1894), refuse la domination française et défend le royaume.","Guerres franco-dahoméennes (1890, puis 1892-1894) contre l’armée du colonel Dodds, mieux armée.","Béhanzin se rend en janvier 1894 ; il est exilé en Martinique puis en Algérie, où il meurt en 1906. Le Dahomey devient colonie française.","Au nord, les rois bariba de Nikki (Bio Guéra) résistent aussi, mais sont vaincus."],r:"Béhanzin résiste de 1890 à 1894, est vaincu et exilé en Martinique.",q:[["Qui commandait l’armée française contre Béhanzin ?",["Le colonel Dodds","Faidherbe","Gallieni"],0],["Où Béhanzin fut-il exilé d’abord ?",["En Martinique","Au Gabon","À Paris"],0],["En quelle année Béhanzin se rend-il ?",["1894","1904","1884"],0]]},
+"Résistances en Afrique":{l:["<b>Samory Touré</b> (Soudan occidental) résiste plus de 15 ans ; arrêté en 1898, il meurt en exil au Gabon en 1900.","<b>Lat Dior</b> (Cayor, Sénégal) refuse le chemin de fer et meurt au combat en 1886.","<b>Abdelkader</b> (Algérie) résiste de 1832 à 1847. <b>El Hadj Omar</b> (empire toucouleur) combat aussi les Français.","Formes de résistance : guerre, refus de l’impôt, fuite, révoltes. Causes d’échec : armes inégales, divisions entre Africains."],r:"Samory, Lat Dior, Abdelkader : résistances armées vaincues par la supériorité militaire et les divisions.",q:[["Qui a été arrêté en 1898 puis exilé au Gabon ?",["Samory Touré","Lat Dior","Béhanzin"],0],["Quel résistant algérien a combattu la France de 1832 à 1847 ?",["Abdelkader","Samory","Lat Dior"],0],["Pourquoi les résistances ont-elles échoué ?",["Armes inégales et divisions","Les Africains n’ont pas résisté","La France avait peu de soldats"],0]]},
+"Loi-cadre de 1956":{l:["La loi-cadre est votée le 23 juin 1956, sous l’impulsion de <b>Gaston Defferre</b>, ministre de la France d’outre-mer.","Elle instaure le <b>suffrage universel</b> et le collège unique.","Chaque territoire reçoit une <b>assemblée territoriale</b> et un <b>conseil de gouvernement</b> : les Africains gèrent leurs affaires intérieures.","Elle prépare l’autonomie, mais affaiblit les fédérations d’AOF et d’AEF."],r:"1956 : Defferre, suffrage universel, conseils de gouvernement, autonomie interne.",q:[["Qui est à l’origine de la loi-cadre ?",["Gaston Defferre","Charles de Gaulle","Léopold Sédar Senghor"],0],["Quel droit est accordé à tous les adultes ?",["Le suffrage universel","Le travail forcé","L’impôt"],0],["Quel organe gère les affaires intérieures du territoire ?",["Le conseil de gouvernement","Le CES","La Cour suprême"],0]]},
+"Référendum de 1958":{l:["Le général <b>de Gaulle</b> propose la Constitution de la Ve République et la <b>Communauté française</b>.","Les territoires votent le <b>28 septembre 1958</b> : « oui » (autonomie dans la Communauté) ou « non » (indépendance immédiate).","Les autres territoires d’AOF votent « oui » ; seule la <b>Guinée</b> de Sékou Touré vote « non » et devient indépendante le 2 octobre 1958.","Le Dahomey vote « oui » et devient république autonome."],r:"28 septembre 1958 : oui = Communauté, non = indépendance. Seule la Guinée dit non.",q:[["Quelle est la date du référendum ?",["28 septembre 1958","1er août 1960","4 décembre 1958"],0],["Quel territoire a voté « non » ?",["La Guinée","Le Dahomey","Le Sénégal"],0],["Que signifiait voter « non » ?",["Choisir l’indépendance immédiate","Rester dans la Communauté","Quitter l’ONU"],0]]},
+"République du Dahomey":{l:["Le <b>4 décembre 1958</b>, l’assemblée territoriale proclame la <b>République du Dahomey</b>, État autonome dans la Communauté française.","Le Dahomey a ses institutions et son gouvernement, mais la France garde la défense, la monnaie et les affaires étrangères.","Le pays se prépare à demander l’indépendance complète.","Le nom « Dahomey » vient du royaume d’Abomey (Danhomè)."],r:"4 décembre 1958 : République du Dahomey, autonome dans la Communauté française.",q:[["Quand le Dahomey devient-il République autonome ?",["4 décembre 1958","1er août 1960","28 septembre 1958"],0],["Qui gardait la défense et la monnaie ?",["La France","Le Dahomey seul","L’ONU"],0],["Dans quel ensemble le Dahomey est-il autonome ?",["La Communauté française","L’Union africaine","La CEDEAO"],0]]},
+"Proclamation de l’indépendance":{l:["Le Dahomey demande son indépendance et obtient le transfert des compétences par la France.","Le <b>1er août 1960</b>, <b>Hubert Maga</b> proclame l’indépendance ; il devient le premier président de la République.","Le 20 septembre 1960, le Dahomey entre à l’ONU.","L’indépendance est fêtée chaque année le 1er août (fête nationale)."],r:"1er août 1960 : indépendance, Hubert Maga, entrée à l’ONU le 20 septembre.",q:[["Qui proclame l’indépendance ?",["Hubert Maga","Mathieu Kérékou","Nicéphore Soglo"],0],["Quelle est la date de l’indépendance ?",["1er août 1960","28 septembre 1958","26 octobre 1972"],0],["Quel jour est la fête nationale ?",["Le 1er août","Le 4 décembre","Le 26 octobre"],0]]},
+"De 1960 à 1972":{l:["Trois grands chefs se disputent le pouvoir : <b>Hubert Maga</b> (nord), <b>Sourou Migan Apithy</b> (sud-est) et <b>Justin Ahomadégbé</b> (sud-ouest).","Entre 1960 et 1972, le pays connaît plusieurs <b>coups d’État</b> (1963, 1965, 1967, 1969, 1972) : on l’appelle « l’enfant malade de l’Afrique ».","En 1970, un <b>Conseil présidentiel</b> réunit les trois chefs, qui dirigent à tour de rôle.","Causes : rivalités régionales, crise économique, ambitions politiques."],r:"1960-1972 : instabilité, coups d’État, rivalité Maga – Apithy – Ahomadégbé.",q:[["Quel surnom a le Dahomey de 1960 à 1972 ?",["L’enfant malade de l’Afrique","Le géant de l’Afrique","Le grenier de l’Afrique"],0],["Quels chefs forment le Conseil présidentiel ?",["Maga, Apithy et Ahomadégbé","Kérékou, Zinsou et Alley","Béhanzin, Ghézo et Glèlè"],0],["Quelle est une cause de l’instabilité ?",["Les rivalités régionales entre chefs","Un excès de pétrole","La guerre avec le Togo"],0]]},
+"Révolution du 26 octobre 1972":{l:["Le <b>26 octobre 1972</b>, le commandant <b>Mathieu Kérékou</b> renverse le Conseil présidentiel par un coup d’État militaire.","Le 30 novembre 1974, il adopte le <b>marxisme-léninisme</b> ; le 30 novembre 1975, le pays devient la <b>République populaire du Bénin</b>.","Un parti unique, le <b>PRPB</b>, dirige le pays ; nationalisation des entreprises, école nouvelle.","Le régime sombre dans une crise économique (faillites bancaires, salaires impayés) et les grèves se multiplient."],r:"26 octobre 1972 : Kérékou. 1975 : République populaire du Bénin, parti unique PRPB.",q:[["Qui a pris le pouvoir le 26 octobre 1972 ?",["Mathieu Kérékou","Hubert Maga","Nicéphore Soglo"],0],["Quel nom le pays prend-il en 1975 ?",["République populaire du Bénin","République du Dahomey","Royaume du Bénin"],0],["Comment s’appelle le parti unique ?",["Le PRPB","L’UEMOA","La CEDEAO"],0]]},
+"Conférence nationale 1990":{l:["En 1989, la crise économique et les grèves poussent Kérékou à abandonner le marxisme-léninisme.","La <b>Conférence nationale des forces vives de la Nation</b> se tient à Cotonou du <b>19 au 28 février 1990</b>, présidée par Mgr <b>Isidore de Souza</b>.","Elle se déclare souveraine, confie le pouvoir à un Premier ministre de transition (<b>Nicéphore Soglo</b>) et prépare la démocratie.","La Constitution est adoptée le <b>11 décembre 1990</b> : multipartisme, libertés, élections libres. Le pays devient « République du Bénin »."],r:"Février 1990 : Conférence nationale ; 11 décembre 1990 : Constitution ; avènement de la démocratie.",q:[["Où s’est tenue la Conférence nationale ?",["À Cotonou","À Abomey","À Parakou"],0],["Qui présidait la Conférence nationale ?",["Mgr Isidore de Souza","Hubert Maga","Mathieu Kérékou"],0],["Quelle est la date de la Constitution de 1990 ?",["11 décembre 1990","1er août 1960","26 octobre 1972"],0]]},
+"Organisations régionales":{l:["<b>Conseil de l’Entente</b> (1959) : Côte d’Ivoire, Dahomey, Haute-Volta, Niger (puis Togo) ; coopération économique et politique.","<b>ONU</b> : paix et développement ; le Bénin y est entré en 1960. <b>Union africaine (UA)</b> : unité africaine, elle remplace l’OUA (2002).","<b>CEDEAO</b> (1975) : communauté économique des États de l’Afrique de l’Ouest. <b>UEMOA</b> (1994) : union économique et monétaire, avec le franc CFA et la BCEAO.","<b>Francophonie</b> : organisation des pays qui partagent le français ; le Bénin en est membre."],r:"Entente 1959, ONU 1960, CEDEAO 1975, UEMOA 1994, UA 2002, Francophonie.",q:[["Quelle organisation a été créée en 1975 pour l’Afrique de l’Ouest ?",["La CEDEAO","L’ONU","Le Conseil de l’Entente"],0],["Quelle organisation réunit les pays qui partagent le français ?",["La Francophonie","L’UEMOA","L’UA"],0],["Quel est le but de l’UEMOA ?",["L’union économique et monétaire","Le sport","La musique"],0]]}},
+"Géographie":{
+"Situation du Bénin":{l:["Le Bénin est en <b>Afrique de l’Ouest</b>, au nord de l’équateur, entre le Togo à l’ouest et le Nigeria à l’est.","Au nord : le Burkina Faso et le Niger. Au sud : l’océan Atlantique (golfe de Guinée), sur environ 125 km de côte.","Superficie : environ 114 763 km². Forme allongée du sud au nord.","Dans le monde : sur le continent africain ; en Afrique : pays côtier d’Afrique de l’Ouest, porte d’entrée pour les pays sans accès à la mer (Niger, Burkina Faso, Mali)."],r:"Bénin : Afrique de l’Ouest, 4 voisins, 125 km de côte sur l’Atlantique.",q:[["Quel océan borde le Bénin ?",["Atlantique","Indien","Pacifique"],0],["Quel pays est à l’ouest ?",["Togo","Nigeria","Niger"],0],["Le Bénin est un pays d’…",["Afrique de l’Ouest","Afrique du Nord","Asie"],0]]},
+"Aspects physiques":{l:["<b>Sud</b> : plaines et plateaux de terre de barre, lagunes, climat subéquatorial (2 saisons des pluies, 2 saisons sèches), forêts et cocotiers.","<b>Centre</b> : collines et plateaux, climat de transition, savane arborée.","<b>Nord</b> : chaîne de l’Atacora (relief le plus élevé), plaines du Borgou, climat soudanien (1 saison des pluies, 1 saison sèche avec l’harmattan), savane.","Le Bénin est un pays surtout de plaines et de bas plateaux."],r:"Sud : 4 saisons, lagunes. Nord : 2 saisons, Atacora, savane.",q:[["Où se trouve la chaîne de l’Atacora ?",["Au nord","Au sud","À l’est"],0],["Le climat du sud est…",["Subéquatorial","Soudanien","Désertique"],0],["Quel vent sec souffle au nord ?",["L’harmattan","La mousson","Le typhon"],0]]},
+"Hydrographie":{l:["<b>Ouémé</b> : le plus long fleuve du Bénin, il se jette dans la lagune de Porto-Novo.","<b>Mono</b> : fleuve frontière avec le Togo ; barrage de Nangbéto.","Au nord : le <b>Niger</b> (frontière avec le Niger) et ses affluents Mékrou, Alibori, Sota ; la Pendjari coule vers le Burkina Faso.","Lacs et lagunes du sud : lac Nokoué, lac Ahémé, lagunes de Porto-Novo et de Grand-Popo."],r:"Ouémé et Mono au sud, Niger et affluents au nord, Nokoué et Ahémé : lacs du sud.",q:[["Quel est le plus long fleuve du Bénin ?",["Ouémé","Mono","Pendjari"],0],["Quel fleuve sépare le Bénin du Togo ?",["Mono","Niger","Ouémé"],0],["Quel lac se trouve près de Cotonou ?",["Nokoué","Tchad","Victoria"],0]]},
+"Peuplement et habitat":{l:["Le Bénin compte plus de 12 millions d’habitants, plus nombreux au sud.","Principales ethnies : Fon, Adja, Yoruba, Bariba, Dendi, Peulh, Otamari (Somba).","Habitat du sud : maisons en dur ; habitat lacustre à Ganvié sur le lac Nokoué.","Habitat du nord : cases en banco et « tata » des Otamari (Atacora) ; les Peulhs ont des huttes d’éleveurs."],r:"Population surtout au sud ; habitat adapté au milieu : lacustre, tata, case.",q:[["Quel village est lacustre ?",["Ganvié","Natitingou","Kandi"],0],["Où la population est-elle la plus dense ?",["Au sud","Au nord","Dans l’Atacora"],0],["Le tata est un habitat…",["Du nord","Du sud","Lacustre"],0]]},
+"Voies de communication":{l:["<b>Routes</b> : routes bitumées (la grande route Cotonou – Malanville au nord), routes en terre et pistes rurales.","<b>Chemin de fer</b> : ligne Cotonou – Parakou. <b>Port</b> de Cotonou, important pour le Niger, le Burkina Faso et le Mali.","<b>Aéroport</b> international de Cotonou. Télécommunications : téléphone, internet, radios.","Les voies de communication facilitent les échanges, le commerce et le déplacement des personnes."],r:"Routes, rail, port et aéroport relient le Bénin à ses voisins et au monde.",q:[["Quelle ville a le grand port ?",["Cotonou","Kandi","Dassa"],0],["Le chemin de fer relie Cotonou à…",["Parakou","Lomé","Niamey"],0],["Les routes servent à…",["Échanger et se déplacer","Dormir","Cultiver"],0]]},
+"Agriculture et élevage":{l:["<b>Sud</b> : palmier à huile, cocotier, maïs, manioc. <b>Centre</b> : igname, manioc, anacardier. <b>Nord</b> : coton, sorgho, mil, riz.","Le <b>coton</b> est le premier produit agricole d’exportation.","<b>Élevage</b> : bovins, ovins, caprins surtout au nord (Peulhs) ; volaille et porcs au sud. <b>Pêche</b> : lagunes, lacs et océan.","Les cultures dépendent du climat et du sol de chaque région."],r:"Sud : palmier. Centre : igname. Nord : coton, bétail.",q:[["Quel produit est le plus exporté ?",["Le coton","Le riz","Le mil"],0],["Où élève-t-on surtout les bovins ?",["Au nord","Au sud","En mer"],0],["Le palmier à huile pousse surtout…",["Au sud","Au nord","Au désert"],0]]},
+"Mines et activités":{l:["<b>Ressources minières</b> : calcaire (ciment), marbre, or, fer, phosphate, sable ; pétrole offshore de Sèmè (exploitation arrêtée).","Au <b>sud</b> : commerce, port, pêche, artisanat, tourisme. Au <b>centre</b> : agriculture et transformation. Au <b>nord</b> : coton, élevage, parcs (Pendjari, W).","Les artisans, les commerçants et l’industrie participent à l’économie.","Le tourisme : Ganvié, Ouidah, parcs nationaux."],r:"Mines : calcaire, marbre, or. Chaque région a ses activités propres.",q:[["Quelle ressource sert à fabriquer le ciment ?",["Le calcaire","L’or","Le sable"],0],["Où se trouve le port ?",["Au sud","Au nord","Au centre"],0],["Le parc de la Pendjari est…",["Au nord","Au sud","Au centre"],0]]}},
+"Civisme":{
+"Code de la route":{l:["Le <b>code de la route</b> fixe les règles pour la sécurité de tous : piétons, cyclistes, motocyclistes, automobilistes.","Feu rouge : on s’arrête. Feu orange : on se prépare à s’arrêter. Feu vert : on passe avec prudence.","Piétons : traverser sur les passages cloutés, marcher sur le trottoir ou à gauche de la route.","Motos : casque obligatoire ; ne pas dépasser la vitesse. Ne jamais conduire après avoir bu ou sans permis."],r:"Respecter le code de la route, c’est protéger sa vie et celle des autres.",q:[["Que signifie le feu rouge ?",["Arrêt","Passage","Vitesse"],0],["Que doit porter le motocycliste ?",["Un casque","Un bonnet","Rien"],0],["Où doit traverser le piéton ?",["Sur le passage clouté","N’importe où","Sur l’autoroute"],0]]},
+"Instances locales":{l:["La <b>commune</b> est dirigée par le maire et le conseil communal.","L’<b>arrondissement</b> est dirigé par le chef d’arrondissement et le conseil d’arrondissement.","Le <b>village</b> ou quartier de ville est dirigé par le chef de village (ou de quartier) et le conseil de village.","Ces autorités gèrent les affaires locales : état civil, marchés, propreté, écoles."],r:"Commune : maire. Arrondissement : chef d’arrondissement. Village : chef de village.",q:[["Qui dirige la commune ?",["Le maire","Le chef de village","Le député"],0],["Qui dirige le village ?",["Le chef de village","Le maire","Le ministre"],0],["L’arrondissement est dirigé par…",["Le chef d’arrondissement","Le roi","Le juge"],0]]},
+"Institutions de l’État (1)":{l:["<b>Présidence de la République</b> : le Président dirige le pays et le gouvernement (pouvoir exécutif).","<b>Assemblée nationale</b> : les députés votent les lois. Le <b>Sénat</b> (chambre haute, installé en 2026) complète le Parlement.","<b>Justice</b> : tribunaux, cours d’appel, <b>Cour suprême</b> (plus haute juridiction pour les affaires judiciaires et administratives).","<b>Cour constitutionnelle</b> : vérifie que les lois respectent la Constitution et proclame les résultats des élections."],r:"Exécutif : Président. Législatif : Assemblée et Sénat. Judiciaire : tribunaux et Cour suprême.",q:[["Qui vote les lois ?",["L’Assemblée nationale","La Cour suprême","Le maire"],0],["Quelle institution vérifie la Constitution ?",["Cour constitutionnelle","HAAC","Le Sénat"],0],["Qui dirige le pays ?",["Le Président","Le chef de village","Le juge"],0]]},
+"Institutions de l’État (2)":{l:["<b>Haute Cour de justice</b> : juge le Président de la République et les membres du gouvernement pour trahison et autres graves fautes.","<b>HAAC</b> (Haute Autorité de l’Audiovisuel et de la Communication) : garantit la liberté de la presse et surveille les médias.","<b>Conseil économique et social (CES)</b> : donne son avis sur les projets de loi économiques, sociaux et culturels.","Ces institutions garantissent la démocratie et l’équilibre des pouvoirs."],r:"HCJ : juge les plus hautes autorités. HAAC : presse. CES : avis économiques et sociaux.",q:[["Quelle institution régule les médias ?",["La HAAC","Le CES","La Cour suprême"],0],["Qui juge le Président pour trahison ?",["La Haute Cour de justice","Le maire","Le chef de village"],0],["CES signifie…",["Conseil économique et social","Cour électorale suprême","Centre éducatif scolaire"],0]]}},
+"Morale":{
+"Politesse et sincérité":{l:["Les <b>marques de politesse</b> : dire bonjour, s’il vous plaît, merci, pardon, saluer ses aînés, laisser sa place.","La <b>sincérité</b> : dire ce que l’on pense vraiment, sans mentir ni faire semblant.","L’<b>honnêteté</b> : ne pas voler, ne pas tricher, rendre ce que l’on trouve.","Ces qualités rendent la vie en société agréable et gagnent la confiance des autres."],r:"Politesse, sincérité et honnêteté : trois qualités du bon élève.",q:[["Que dit-on pour remercier ?",["Merci","Va-t’en","Rien"],0],["La sincérité, c’est…",["Dire la vérité","Mentir","Se moquer"],0],["Je trouve un stylo perdu : je…",["Le rends","Le garde","Le casse"],0]]},
+"Défauts : médisance, calomnie":{l:["La <b>médisance</b> : dire du mal de quelqu’un en son absence, même si c’est vrai.","La <b>calomnie</b> : accuser quelqu’un d’une faute qu’il n’a pas commise, c’est un mensonge qui détruit sa réputation.","Autres défauts : la jalousie, la paresse, la colère, l’égoïsme, la moquerie.","Pour s’en corriger : s’excuser, réparer le tort causé, respecter les autres."],r:"Médisance : dire du mal. Calomnie : accuser faussement. Il faut les éviter.",q:[["Accuser faussement quelqu’un, c’est…",["La calomnie","La politesse","L’honnêteté"],0],["Dire du mal d’un absent, c’est…",["La médisance","La sincérité","La bonté"],0],["Que faire après avoir blessé un camarade ?",["Lui présenter des excuses","L’ignorer","Se moquer"],0]]},
+"Fléaux sociaux":{l:["Les <b>fléaux sociaux</b> nuisent à la société : toxicomanie, alcoolisme, corruption, vol, violence.","<b>Toxicomanie</b> : consommation de drogues ; elle détruit la santé et conduit à la délinquance.","<b>Alcoolisme</b> : abus d’alcool ; il cause maladies, accidents et violences familiales.","<b>Corruption</b> : donner ou recevoir de l’argent ou un cadeau pour obtenir un avantage injuste. Elle freine le développement."],r:"Dire non à la drogue, à l’alcool et à la corruption pour construire un pays prospère.",q:[["La drogue provoque…",["La toxicomanie","La santé","La richesse"],0],["La corruption est…",["Un fléau","Une qualité","Un jeu"],0],["L’abus d’alcool conduit à…",["L’alcoolisme","La sincérité","Le sport"],0]]}}}};
+
+var LOGO="data:image/webp;base64,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";document.querySelectorAll(".lg").forEach(function(i){i.src=LOGO});document.getElementById("fav").href="data:image/png;base64,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";
+var st={s:"EST",g:null,c:null,m:"lecon"},$=function(i){return document.getElementById(i)};
+function btn(t,cls,f){var b=document.createElement("button");b.textContent=t;b.className=cls||"";b.onclick=f;return b}
+function render(){
+$("chap").style.display=st.m=="defi"?"none":"";
+var G=D[st.s],gk=Object.keys(G);if(!G[st.g])st.g=gk[0];var S=G[st.g],keys=Object.keys(S);if(!st.c||!S[st.c])st.c=keys[0];var gr=$("grp");gr.innerHTML="";if(gk.length>1)gk.forEach(function(k){gr.appendChild(btn(k,"chip"+(k==st.g?" on":""),function(){st.g=k;st.c=null;render()}))});
+var sj=$("subj");sj.innerHTML="";
+[["EST","🔬 EST"],["ES","🌍 ES"]].forEach(function(a){sj.appendChild(btn(a[1],st.s==a[0]?"on":"",function(){st.s=a[0];st.g=null;st.c=null;render()}))});
+var ch=$("chap");ch.innerHTML="";
+keys.forEach(function(k){ch.appendChild(btn(k,"chip"+(k==st.c?" on":""),function(){st.c=k;render()}))});
+var md=$("mode");md.innerHTML="";
+[["lecon","📖 Leçon"],["quiz","📝 Quiz"],["defi","🏆 Défi"]].forEach(function(a){md.appendChild(btn(a[1],"act"+(st.m==a[0]?" on":""),function(){st.m=a[0];render()}))});
+var o=$("out"),c=S[st.c];o.innerHTML="";
+if(st.m=="defi")defi(o);else if(st.m=="lecon"){
+var h='<div class="card"><h2>'+st.c+'</h2><ul>'+c.l.map(function(x){return"<li>"+x+"</li>"}).join("")+'</ul><div class="ret"><b>À retenir :</b> '+c.r+'</div></div>';
+o.innerHTML=h;
+}else quiz(o,c);
+}
+function quiz(o,c){
+var n=0,done=0,card=document.createElement("div");card.className="card";
+card.innerHTML="<h2>Quiz : "+st.c+"</h2>";
+var sc=document.createElement("div");sc.className="sc";
+c.q.forEach(function(it){
+var q=document.createElement("div");q.className="q";q.textContent=it[0];card.appendChild(q);
+var bs=[];it[1].forEach(function(t,i){
+var b=btn(t,"opt",function(){
+if(q.dataset.d)return;q.dataset.d=1;done++;
+bs.forEach(function(x,j){x.disabled=true;if(j==it[2])x.classList.add("ok")});
+if(i==it[2])n++;else b.classList.add("ko");
+sc.textContent="Score : "+n+" / "+done+(done==c.q.length?(n==done?" — Excellent ! 🎉":" — Relis la leçon et réessaie."):"");
+});bs.push(b);card.appendChild(b)});
+});
+card.appendChild(sc);
+card.appendChild(btn("Recommencer","act",render));
+o.appendChild(card);
+}
+var BANK={EST:[[
+"Quel organe pompe le sang dans le corps ?|Le cœur|Le foie|L’estomac",
+"Par où l’air entre-t-il d’abord dans le corps ?|Par le nez|Par l’oreille|Par l’œil",
+"Que faut-il pour que la lampe s’allume ?|Un circuit fermé|Un circuit ouvert|Un fil coupé",
+"Lequel est un exemple de levier ?|La brouette|La pile|Le thermomètre",
+"Quelle énergie vient du soleil ?|L’énergie solaire|L’énergie du charbon|L’énergie du gaz",
+"Les premiers hommes vivaient de…|Chasse et cueillette|Commerce en ligne|Travail en usine",
+"Quel gaz respirons-nous pour vivre ?|L’oxygène|Le gaz carbonique|La fumée",
+"Quels vaisseaux ramènent le sang au cœur ?|Les veines|Les artères|Les bronches",
+"Quel matériau est un isolant ?|Le plastique|Le cuivre|Le fer",
+"À quoi sert une poulie ?|À soulever des charges|À mesurer la température|À fabriquer du sang",
+"Quelle énergie utilise le vent ?|L’énergie éolienne|L’énergie solaire|L’énergie du gaz",
+"Quel organe sert à respirer ?|Les poumons|Les reins|Le cœur",
+"Qu’ont découvert les premiers hommes ?|Le feu|L’électricité|Internet",
+"Quelle énergie est renouvelable ?|Le soleil|Le pétrole|Le charbon",
+"Dans quoi le sang circule-t-il ?|Les vaisseaux sanguins|La trachée|L’œsophage",
+"Un fil électrique dénudé est…|Dangereux|Sans danger|Un isolant",
+"Quel outil est un levier ?|Les ciseaux|Une ampoule|Une pile",
+"La poulie fixe d’un puits permet de…|Changer la direction de la force|Fabriquer de l’eau|Chauffer l’eau",
+"Le pétrole est une énergie…|Non renouvelable|Renouvelable|Inépuisable",
+"Quel gaz rejette-t-on en plus grande quantité en expirant ?|Le gaz carbonique|L’oxygène|L’hélium"],[
+"Quelles cellules du sang transportent l’oxygène ?|Les globules rouges|Les globules blancs|Les plaquettes",
+"Quelles cellules défendent le corps contre les microbes ?|Les globules blancs|Les globules rouges|Les plaquettes",
+"Quels éléments du sang aident à arrêter les saignements ?|Les plaquettes|Les globules rouges|Les bronches",
+"Quel est le bon ordre du trajet de l’air ?|Nez, trachée, bronches, poumons|Nez, bronches, trachée, poumons|Poumons, trachée, nez, bronches",
+"Où l’oxygène passe-t-il dans le sang ?|Dans les alvéoles des poumons|Dans l’estomac|Dans les reins",
+"Dans un circuit en série, si une lampe grille…|Toutes les lampes s’éteignent|Les autres restent allumées|Rien ne change",
+"Quel montage donne à chaque lampe son propre chemin ?|La dérivation|La série|Le court-circuit",
+"Quel danger peut causer un court-circuit ?|Un incendie|Un rhume|Un gain d’énergie",
+"Dans un levier, le point fixe s’appelle…|Le point d’appui|La résistance|L’effort",
+"Quelle poulie diminue l’effort ?|La poulie mobile|La poulie fixe|Aucune",
+"Quel homme préhistorique a fabriqué les premiers outils ?|Homo habilis|Homo sapiens|Un chimpanzé",
+"Où Homo sapiens est-il apparu ?|En Afrique|En Amérique|En Antarctique",
+"Quelle énergie utilise un barrage ?|L’eau|Le vent|Le gaz",
+"Laquelle est une énergie non renouvelable ?|Le gaz naturel|Le vent|Le soleil",
+"Pourquoi faut-il économiser l’énergie ?|Pour limiter la pollution et l’épuisement|Pour fabriquer plus de déchets|Pour couper l’électricité à l’école",
+"Que fait le thorax à l’inspiration ?|Il gonfle|Il se dégonfle|Il s’arrête",
+"Combien de battements par minute, environ, pour le pouls d’un adulte ?|70 à 80|10 à 20|200 à 300",
+"Quelle machine simple aide à monter une charge sur un camion ?|Le plan incliné|Le thermomètre|La pile",
+"Quel matériau conduit le courant ?|Le cuivre|Le bois|Le verre",
+"Quelle énergie utilisent les panneaux solaires ?|Le soleil|Le vent|Le charbon"],[
+"Quelle circulation va du cœur aux poumons et retour ?|La petite circulation|La grande circulation|La circulation lente",
+"Quel liquide compose surtout le plasma ?|L’eau|L’huile|L’air",
+"Quel vaisseau est le plus fin ?|Le capillaire|L’artère|La veine",
+"Quel gaz est plus abondant dans l’air expiré que dans l’air inspiré ?|Le gaz carbonique|L’oxygène|L’azote",
+"Quel muscle aide l’inspiration ?|Le diaphragme|Le biceps|Le cœur",
+"Quel est le rôle des bronches ?|Conduire l’air vers les poumons|Pomper le sang|Digérer les aliments",
+"Pourquoi la fumée de cigarette est-elle dangereuse ?|Elle abîme les poumons|Elle fortifie les poumons|Elle fait grandir",
+"Deux lampes en dérivation : si l’une grille…|L’autre reste allumée|L’autre s’éteint|Elles explosent",
+"Quel appareil ouvre ou ferme un circuit ?|L’interrupteur|La lampe|Le fil isolant",
+"Quelle machine simple utilise un point d’appui ?|Le levier|La pile|Le thermomètre",
+"Dans une brouette, la roue joue le rôle du…|Point d’appui|Charge|Effort",
+"Une poulie fixe sert à…|Changer la direction de la force|Diviser la charge par deux|Supprimer le poids",
+"Quel homme a maîtrisé le feu ?|Homo erectus|Homo habilis|Aucun",
+"Le passage de la vie nomade au village s’appelle…|La sédentarisation|Le nomadisme|La chasse",
+"La biomasse vient…|De matières végétales et animales|Du charbon fossile|Du vent",
+"Quel est l’inconvénient des énergies fossiles ?|Elles polluent et s’épuisent|Elles sont infinies|Elles sont toujours propres",
+"Le barrage de Nangbéto est sur le fleuve…|Mono|Ouémé|Niger",
+"Pourquoi préférer les énergies renouvelables ?|Elles polluent moins et ne s’épuisent pas|Elles coûtent toujours zéro|Elles sont dangereuses",
+"Quel est le trajet du sang oxygéné ?|Poumons → cœur → organes|Organes → poumons → cœur|Cœur → organes → poumons",
+"Quel danger si on branche trop d’appareils sur une prise ?|Surchauffe et incendie|Énergie gratuite|Rien"]],
+ES:[[
+"Quelle est la capitale du Bénin ?|Porto-Novo|Cotonou|Parakou",
+"Quelle est la date de l’indépendance ?|1er août 1960|1er août 1958|1er août 1975",
+"Qui dirige la commune ?|Le maire|Le chef de village|Le roi",
+"Que dit-on pour remercier ?|Merci|Pardon|Bonjour",
+"Quel océan borde le Bénin ?|L’Atlantique|L’Indien|Le Pacifique",
+"Que signifie le feu rouge ?|Arrêt|Passage|Accélérer",
+"Quelle est la devise du Bénin ?|Fraternité – Justice – Travail|Liberté – Égalité – Fraternité|Union – Discipline – Travail",
+"Quel roi a résisté à la France ?|Béhanzin|Houégbadja|Toffa",
+"Où cultive-t-on surtout le coton ?|Au nord|Au sud|Dans l’océan",
+"La calomnie, c’est…|Accuser faussement|Dire la vérité|Aider",
+"Quel fleuve est frontière avec le Togo ?|Le Mono|L’Ouémé|Le Niger",
+"Qui doit porter un casque ?|Le motocycliste|Le piéton|Le passager d’un bus",
+"Quel pays est à l’ouest du Bénin ?|Togo|Nigeria|Niger",
+"L’alcoolisme est…|Un fléau social|Une qualité|Un sport",
+"Qui vote les lois ?|L’Assemblée nationale|Le maire|Le juge",
+"Que signifie ONU ?|Organisation des Nations unies|Organisation nationale universelle|Office nord-africain unifié",
+"L’honnêteté, c’est…|Ne pas voler ni tricher|Mentir|Se moquer",
+"Quel lac est près de Cotonou ?|Nokoué|Tchad|Victoria",
+"Qui dirige le village ?|Le chef de village|Le député|Le ministre",
+"Où est le grand port du Bénin ?|Cotonou|Parakou|Natitingou"],[
+"Quelle conférence a partagé l’Afrique ?|Berlin|Paris|Madrid",
+"En quelle année a lieu le référendum ?|1958|1956|1960",
+"Quelle loi de 1956 donne l’autonomie interne ?|La loi-cadre|La loi de Berlin|La charte de l’ONU",
+"Quel pays a voté « non » en 1958 ?|La Guinée|Le Dahomey|Le Togo",
+"Qui fut le premier président du Dahomey ?|Hubert Maga|Mathieu Kérékou|Patrice Talon",
+"Que signifie UA ?|Union africaine|Union atlantique|Union des armées",
+"Quelle monnaie utilise l’UMOA ?|Le franc CFA|Le dollar|Le naira",
+"Quel relief est le plus élevé au nord ?|L’Atacora|Les plateaux du sud|La lagune",
+"Quel est le plus long fleuve du Bénin ?|L’Ouémé|Le Mono|Le Couffo",
+"Quelle ville est reliée par rail à Cotonou ?|Parakou|Lomé|Abidjan",
+"Quelle région a un climat soudanien ?|Le nord|Le sud|La côte",
+"Le tata est l’habitat des…|Otamari|Pêcheurs de Ganvié|Citadins",
+"Qui juge le Président pour trahison ?|La Haute Cour de justice|Le CES|La HAAC",
+"Quelle institution veille sur la presse ?|La HAAC|La Cour suprême|Le Sénat",
+"Qui dirige l’arrondissement ?|Le chef d’arrondissement|Le maire|Le roi",
+"Qu’est-ce que la médisance ?|Dire du mal d’un absent|Dire la vérité|Aider quelqu’un",
+"Quel fléau consiste à donner de l’argent pour obtenir un avantage injuste ?|La corruption|L’épargne|Le commerce",
+"Quelle ressource sert à fabriquer le ciment ?|Le calcaire|L’or|Le sel",
+"Quel est le premier produit agricole d’exportation ?|Le coton|L’igname|Le maïs",
+"Quelle est la date de la fête nationale ?|1er août|11 décembre|4 décembre"],[
+"En quelle année le Dahomey devient-il colonie française ?|1894|1904|1884",
+"Qui a conçu la loi-cadre de 1956 ?|Gaston Defferre|Charles de Gaulle|Samory Touré",
+"Qui a proposé le référendum de 1958 ?|Charles de Gaulle|Gaston Defferre|Hubert Maga",
+"Quand le Dahomey devient-il République autonome ?|4 décembre 1958|1er août 1960|28 septembre 1958",
+"Quand le Dahomey entre-t-il à l’ONU ?|20 septembre 1960|1er août 1960|1975",
+"Quelle organisation l’UA a-t-elle remplacée ?|L’OUA|L’ONU|L’UMOA",
+"Quel organisme émet le franc CFA de l’UMOA ?|La BCEAO|Le CES|L’ONU",
+"Bio Guéra était roi de…|Nikki|Abomey|Porto-Novo",
+"Quelle est la longueur de la côte béninoise ?|Environ 125 km|Environ 50 km|Environ 600 km",
+"Quelle est la superficie du Bénin ?|Environ 114 763 km²|Environ 1 million km²|Environ 10 000 km²",
+"Quel climat a le sud du Bénin ?|Subéquatorial|Soudanien|Désertique",
+"Quel village est bâti sur pilotis ?|Ganvié|Dassa|Kandi",
+"Quel département correspond à Cotonou ?|Le Littoral|L’Alibori|La Donga",
+"Quel parc national est au nord ?|La Pendjari|Le Nokoué|Ahémé",
+"Quelle institution vérifie la conformité des lois à la Constitution ?|La Cour constitutionnelle|La HAAC|Le CES",
+"Quelle est la plus haute juridiction judiciaire et administrative ?|La Cour suprême|Le tribunal de village|La HAAC",
+"Que fait le CES ?|Il donne son avis sur les projets économiques et sociaux|Il vote les lois|Il juge le Président",
+"Quelle chambre du Parlement a été installée en 2026 ?|Le Sénat|La HAAC|Le CES",
+"Dire du mal d’un absent, même si c’est vrai, c’est…|La médisance|La calomnie|La sincérité",
+"Sur un passage clouté, le piéton doit…|Regarder à gauche et à droite|Courir|Traverser sans regarder"]]};
+BANK.EST.push([
+"Entre quels organes se trouve le cœur ?|Entre les deux poumons|Entre les reins|Sous l’estomac",
+"Quelle cavité du cœur envoie le sang vers tout le corps ?|Le ventricule gauche|L’oreillette droite|La trachée",
+"Que transporte le sang en plus de l’oxygène ?|Les nutriments|L’urine|Les aliments entiers",
+"Comment s’appelle la plus grosse artère du corps ?|L’aorte|La trachée|La bronche",
+"Quel gaz le sang rapporte-t-il des organes vers les poumons ?|Le gaz carbonique|L’oxygène|L’hélium",
+"Quel est le rôle des alvéoles pulmonaires ?|Échanger les gaz avec le sang|Fabriquer le sang|Filtrer l’urine",
+"Comment protéger ses poumons ?|Éviter la fumée et la poussière|Fumer un peu|Se boucher le nez toute la journée",
+"La pile est neuve mais la lampe ne s’allume pas. Cause probable ?|Un fil coupé ou mal branché|Il fait jour|La lampe est trop grande",
+"Si l’interrupteur est ouvert, le courant…|Ne passe pas|Passe plus fort|Passe en sens inverse",
+"Plus l’effort est loin du point d’appui du levier…|Plus l’effort nécessaire est petit|Plus l’effort est grand|Plus le levier casse",
+"Dans une balançoire à bascule, le point d’appui est…|Au milieu|À une extrémité|Absent",
+"Un système de poulies sert à…|Réduire l’effort pour lever une charge|Augmenter le poids|Créer de l’énergie",
+"Quel fossile célèbre de 3 millions d’années a été trouvé en Éthiopie ?|Lucy|Ötzi|Cro-Magnon",
+"Quelle période précède l’invention de l’écriture ?|La Préhistoire|L’époque coloniale|L’ère moderne",
+"Quel geste protège les forêts ?|Utiliser des foyers améliorés|Brûler plus de bois|Couper les jeunes arbres",
+"Le pétrole, le charbon et le gaz sont des énergies…|Fossiles|Du vent|Humaines",
+"Pourquoi dit-on que l’énergie solaire est propre ?|Elle ne produit pas de fumée polluante|Elle ne chauffe jamais|Elle fait de la fumée noire",
+"Quel appareil transforme le vent en électricité ?|Une éolienne|Un barrage|Une lampe",
+"Quel appareil transforme l’énergie de l’eau en électricité ?|Un barrage|Une éolienne|Un panneau solaire",
+"Quel matériau est conducteur ?|L’aluminium|Le caoutchouc|Le verre"],[
+"Pourquoi le pouls augmente-t-il après la course ?|Les muscles ont besoin de plus d’oxygène|Le sang s’arrête|Le cœur dort",
+"Pourquoi respire-t-on plus vite après un effort ?|Pour apporter plus d’oxygène|Pour refroidir le cœur|Pour manger",
+"Quelle partie ferme la trachée quand on avale ?|L’épiglotte|L’alvéole|Le diaphragme",
+"Pourquoi les fils électriques sont-ils entourés de plastique ?|Pour isoler et protéger du courant|Pour les alourdir|Pour conduire le courant",
+"Pourquoi ne pas toucher une prise avec les mains mouillées ?|L’eau conduit le courant|L’eau isole|L’eau chauffe le fil",
+"Quel dispositif protège un circuit en cas de surintensité ?|Le fusible|La poulie|Le levier",
+"Dans une pince coupante, le fil à couper est placé…|Près du point d’appui|Au bout des poignées|Loin de l’articulation",
+"Avec une poulie mobile, la force nécessaire est environ…|La moitié du poids|Le double du poids|Dix fois le poids",
+"Qu’a permis le feu aux premiers hommes ?|Cuire les aliments et se protéger|Voyager en avion|Écrire des livres",
+"Quel changement est lié à l’agriculture ?|La vie en villages|La vie nomade seulement|La chasse exclusive",
+"Quel est un point commun des hommes préhistoriques ?|Ils fabriquaient des outils|Ils utilisaient l’électricité|Ils écrivaient des livres",
+"Pourquoi le charbon est-il une énergie épuisable ?|Il met des millions d’années à se former|Il se renouvelle chaque jour|Il vient du vent",
+"Quel bon geste pour économiser l’électricité ?|Éteindre les appareils inutiles|Laisser les lampes allumées|Ouvrir longtemps le réfrigérateur",
+"Quel gaz augmente avec la combustion des énergies fossiles ?|Le gaz carbonique|L’oxygène|L’hélium",
+"Quel est l’avantage de l’éolienne ?|Elle produit sans polluer|Elle consomme du pétrole|Elle fonctionne sans vent",
+"Le soleil est utile pour…|Sécher les récoltes et produire de l’électricité|Fabriquer du pétrole|Arrêter le vent",
+"Quel est le bon geste de sécurité avec une prise ?|Débrancher en tirant la fiche|Tirer sur le fil|Mouiller la prise",
+"Que se passe-t-il avec une pile usée ?|La lampe brille faiblement ou pas|La lampe brille plus fort|Le fil devient liquide",
+"Quel organe filtre le sang pour fabriquer l’urine ?|Les reins|Le cœur|Les poumons",
+"Le sang riche en oxygène est de couleur…|Rouge vif|Verte|Bleue"]);
+BANK.ES.push([
+"Quelle ville fut la capitale du royaume du Danhomè ?|Abomey|Natitingou|Kandi",
+"Quel roi a été exilé en Martinique ?|Béhanzin|Ghézo|Agadja",
+"Samory Touré a résisté à la France en…|Afrique de l’Ouest|Afrique australe|Asie",
+"Que signifie AOF ?|Afrique-Occidentale française|Afrique-Orientale française|Amérique de l’Ouest française",
+"Quel était le but du référendum de 1958 ?|Choisir la Communauté française ou la rupture|Élire un maire|Choisir le drapeau",
+"Que signifie UEMOA ?|Union économique et monétaire ouest-africaine|Union européenne des marchés|Union des écoles",
+"Où se trouve le siège de la BCEAO ?|Dakar|Cotonou|Abidjan",
+"Quel département a pour chef-lieu Natitingou ?|L’Atacora|Le Borgou|Le Zou",
+"Quel est le chef-lieu du Borgou ?|Parakou|Natitingou|Abomey",
+"Quel est le chef-lieu du Zou ?|Abomey|Parakou|Cotonou",
+"Quelle céréale est cultivée au nord ?|Le sorgho|Le cocotier|Le cacao",
+"Quelle ville du nord termine la route vers le Niger ?|Malanville|Ouidah|Grand-Popo",
+"Que pratiquent les populations des lagunes ?|La pêche|L’élevage de chameaux|La culture du blé",
+"Que signifie un feu orange ?|Se préparer à s’arrêter|Accélérer|Passer sans regarder",
+"Que doit faire un conducteur à un passage piéton ?|Ralentir et laisser passer|Klaxonner|Accélérer",
+"Quel est un droit de l’enfant ?|Aller à l’école|Travailler toute la journée|Conduire une moto",
+"Quel est un devoir de l’élève ?|Respecter le règlement|Arriver en retard|Casser les tables",
+"Quel fléau détruit la santé et le cerveau ?|La drogue|Le sport|La lecture",
+"La sincérité s’oppose à…|L’hypocrisie|La politesse|La solidarité",
+"Que fait un élève poli en entrant en classe ?|Il salue|Il crie|Il ne dit rien"],[
+"Pourquoi les puissances ont-elles partagé l’Afrique ?|Pour ses ressources et ses marchés|Pour aider gratuitement|Pour construire des écoles seulement",
+"Quel roi du Danhomè a régné avant Béhanzin ?|Glèlè|Houégbadja|Agadja",
+"Qui fut le père de Béhanzin ?|Glèlè|Ghézo|Toffa",
+"Quel événement a eu lieu en 1990 au Bénin ?|La Conférence nationale|L’indépendance|Le référendum de 1958",
+"Quelle Constitution date du 11 décembre 1990 ?|La Constitution du Renouveau démocratique|La loi-cadre|Le code de la route",
+"Quel pays n’est pas voisin du Bénin ?|Le Ghana|Le Togo|Le Nigeria",
+"Quel pays voisin n’a pas d’accès à la mer ?|Le Niger|Le Togo|Le Nigeria",
+"Quel golfe borde le sud du Bénin ?|Le golfe de Guinée|Le golfe du Mexique|Le golfe Persique",
+"Pourquoi le sud est-il plus peuplé ?|Villes, port et terres fertiles|Il est désertique|Il est montagneux",
+"Quelle activité est typique du nord ?|L’élevage de bovins|La pêche lagunaire|La culture du cocotier",
+"Quel est le rôle d’un port ?|Recevoir et envoyer des marchandises|Fabriquer du ciment|Cultiver le coton",
+"Quel est l’avantage du chemin de fer ?|Transporter de lourdes charges|Voler|Cultiver",
+"Que fait le pouvoir exécutif ?|Appliquer les lois|Voter les lois|Juger les citoyens",
+"Quel pouvoir juge les citoyens ?|Le pouvoir judiciaire|Le pouvoir exécutif|Le pouvoir législatif",
+"Le Parlement béninois comprend…|L’Assemblée nationale et le Sénat|La Cour suprême seulement|Le CES seulement",
+"Pourquoi existe-t-il des feux tricolores ?|Pour réguler la circulation et sauver des vies|Pour décorer|Pour faire du bruit",
+"Quelle différence entre calomnie et médisance ?|Calomnie : accusation fausse ; médisance : dire du mal d’un absent|Calomnie : dire du bien ; médisance : se taire|Aucune différence",
+"Que faire face à la corruption ?|La refuser et la dénoncer|L’imiter|S’en moquer",
+"Quel danger l’alcool présente-t-il pour un conducteur ?|Il provoque des accidents|Il rend plus prudent|Il guérit",
+"Un élève honnête trouve de l’argent à l’école. Il…|Le remet au maître|Le dépense|Le cache"]);
+(function(){var A={EST:[[
+"Combien de poumons avons-nous ?|Deux|Un|Trois",
+"Que transporte le sang ?|L’oxygène et les nutriments|Seulement l’air|Seulement l’eau",
+"Quel liquide circule dans les vaisseaux sanguins ?|Le sang|L’eau|L’huile",
+"Quel objet fournit le courant à une lampe de poche ?|La pile|Le fil de pêche|La gomme",
+"Qu’est-ce qu’un interrupteur ?|Un objet qui ouvre ou ferme le circuit|Un objet qui chauffe|Un objet qui lit",
+"Quel outil sert à soulever une lourde pierre ?|Un levier|Une gomme|Un cahier",
+"Quelle énergie vient de l’eau d’un barrage ?|L’énergie hydraulique|L’énergie solaire|L’énergie éolienne",
+"Le bois et le charbon servent à…|Faire du feu|Faire de la glace|Écrire",
+"Les premiers hommes habitaient souvent dans…|Des grottes et des abris|Des immeubles|Des avions",
+"Que respire-t-on quand on inspire ?|De l’air|De l’eau|De la terre"],[
+"Où le cœur envoie-t-il le sang chargé de gaz carbonique ?|Aux poumons|À l’estomac|Au cerveau",
+"Comment s’appelle la partie liquide et jaune clair du sang ?|Le plasma|La bile|La salive",
+"Quel muscle sépare le thorax de l’abdomen ?|Le diaphragme|Le biceps|Le cœur",
+"Quel métal est un très bon conducteur utilisé dans les fils ?|Le cuivre|Le plastique|Le bois",
+"Une pince est un exemple de…|Levier|Poulie|Pile",
+"Quelle machine simple sert à puiser l’eau d’un puits ?|La poulie|Le thermomètre|La pile",
+"Que savait faire Homo erectus ?|Tailler la pierre et maîtriser le feu|Fabriquer des ordinateurs|Piloter des avions",
+"Une énergie renouvelable est une énergie…|Qui ne s’épuise pas|Qui s’épuise vite|Qui vient du pétrole",
+"Quel appareil produit de l’électricité avec la lumière ?|Le panneau solaire|La pile à charbon|La poulie",
+"Quelle matière est un bon isolant ?|Le caoutchouc|L’aluminium|Le fer"],[
+"Quel vaisseau emmène le sang du cœur vers les poumons ?|L’artère pulmonaire|La trachée|L’œsophage",
+"Combien de cavités a le cœur humain ?|Quatre|Deux|Six",
+"Quelle partie des poumons assure les échanges de gaz ?|Les alvéoles|La trachée|Les côtes",
+"Pourquoi est-il préférable de respirer par le nez ?|L’air est réchauffé et filtré|Le nez pompe le sang|L’air est plus riche en oxygène",
+"Quelle force applique-t-on sur un levier ?|L’effort|La résistance|Le point d’appui",
+"Dans un levier, la charge à soulever s’appelle…|La résistance|L’effort|Le point d’appui",
+"Avec une poulie fixe, pour lever 10 kg, il faut tirer environ…|10 kg|5 kg|20 kg",
+"Qu’est-ce qui distingue Homo sapiens des premiers hommes ?|Un grand cerveau et un front droit|Un corps couvert de poils|Une marche à quatre pattes",
+"Quelles énergies utilise une centrale thermique ?|Charbon, gaz ou pétrole|Vent seulement|Soleil seulement",
+"Pourquoi dit-on que la biomasse est renouvelable ?|Les plantes repoussent|Elle vient d’une mine|Elle est faite de pétrole"],[
+"Quel vaisseau sort du ventricule gauche ?|L’aorte|La trachée|L’œsophage",
+"Quelle cellule du sang donne sa couleur rouge ?|Les globules rouges|Le plasma|Les plaquettes",
+"Un fil de circuit est coupé : que faire ?|Le réparer ou le remplacer|Changer la lampe par une pierre|Ne rien faire",
+"Dans une brouette, la charge est placée…|Dans le bac|Sur les poignées|Sur la roue",
+"Les ciseaux sont formés de…|Deux leviers|Une poulie|Un plan incliné",
+"Qu’est-ce qui a aidé les premiers hommes à se défendre des animaux sauvages ?|Le feu|L’électricité|Le téléphone",
+"Quelle énergie renouvelable utilise la lumière du jour ?|Le solaire|Le charbon|Le gaz",
+"Pourquoi les énergies fossiles sont-elles dangereuses pour l’environnement ?|Elles produisent de la pollution|Elles sont gratuites|Elles font pousser les plantes",
+"Pourquoi recommande-t-on les lampes économiques ?|Elles consomment moins d’énergie|Elles consomment plus|Elles chauffent la maison",
+"Quel appareil du corps apporte l’oxygène au sang ?|Les poumons|Le foie|Les reins"],[
+"Pourquoi l’air expiré contient-il plus de gaz carbonique ?|Le corps en produit en utilisant l’oxygène|Le nez le fabrique|Il vient de l’eau bue",
+"Pourquoi les athlètes respirent-ils plus profondément ?|Leurs muscles consomment plus d’oxygène|Pour dormir|Pour refroidir le cœur",
+"Pourquoi le circuit doit-il être fermé ?|Le courant doit circuler en boucle|La lampe a peur du noir|Le fil doit être court",
+"Quel danger représente une prise sans protection ?|L’électrocution|Le rhume|La faim",
+"Quel système aide le plus à lever une charge lourde ?|Des poulies mobiles|Une poulie fixe seule|Aucun",
+"Pourquoi une longue barre aide-t-elle à soulever une grosse pierre ?|Elle augmente la distance au point d’appui|Elle rend la pierre légère|Elle supprime le poids",
+"Pourquoi les premiers hommes étaient-ils nomades ?|Ils suivaient le gibier et les fruits|Ils avaient des voitures|Ils détestaient le feu",
+"Quel effet ont les énergies fossiles sur le climat ?|Elles augmentent l’effet de serre|Elles refroidissent la Terre|Aucun effet",
+"Quelle est la source de la plupart des énergies renouvelables ?|Le soleil|Le charbon|Le pétrole",
+"Que signifie « énergie durable » ?|Qu’on peut l’utiliser longtemps sans l’épuiser|Qu’elle est très chère|Qu’elle est dangereuse"]],
+ES:[[
+"Quel pays est à l’est du Bénin ?|Le Nigeria|Le Togo|Le Ghana",
+"Quelles sont les couleurs du drapeau béninois ?|Vert, jaune, rouge|Bleu, blanc, rouge|Noir, blanc, vert",
+"Quelle ville est la capitale économique du Bénin ?|Cotonou|Parakou|Kandi",
+"Quel est l’hymne national du Bénin ?|L’Aube nouvelle|La Marseillaise|Le Chant du départ",
+"Que doit-on faire avant de traverser la route ?|Regarder des deux côtés|Fermer les yeux|Courir sans regarder",
+"Dire « s’il vous plaît » est une marque de…|Politesse|Colère|Paresse",
+"Quelle plante donne l’huile de palme ?|Le palmier à huile|Le cotonnier|Le mil",
+"Mentir est…|Un défaut|Une qualité|Un devoir",
+"Voter est…|Un devoir civique|Un jeu|Une punition",
+"Quelle activité pratique-t-on au bord de la mer ?|La pêche|La culture du coton|L’élevage de chameaux"],[
+"Quel roi d’Abomey a régné de 1818 à 1858 ?|Ghézo|Béhanzin|Glèlè",
+"Quelle végétation domine dans le nord du Bénin ?|La savane|La forêt dense|La mangrove",
+"Qui est le chef de l’État béninois ?|Le Président de la République|Le maire|Le chef de village",
+"Quelle institution rend la justice ?|Les tribunaux|L’Assemblée nationale|La HAAC",
+"Quel est le rôle du maire ?|Diriger la commune|Voter les lois|Juger les citoyens",
+"Quelle plante donne le coton ?|Le cotonnier|Le palmier|Le manioc",
+"Quelle ville béninoise est célèbre pour la Route des esclaves ?|Ouidah|Kandi|Natitingou",
+"Quelle est une marque de respect envers un aîné ?|Le saluer et l’écouter|Se moquer de lui|L’ignorer",
+"La toxicomanie est…|Une dépendance à la drogue|Un sport|Un métier",
+"Quel feu autorise à passer ?|Le feu vert|Le feu rouge|Aucun"],[
+"Comment appelle-t-on l’occupation de l’Afrique par les Européens ?|La colonisation|L’indépendance|La décolonisation",
+"Quel est le but de la loi-cadre de 1956 ?|Donner plus d’autonomie aux colonies|Supprimer la France|Créer l’ONU",
+"Quelle organisation a remplacé la Société des Nations ?|L’ONU|L’UA|L’UMOA",
+"Où se trouve le siège de l’ONU ?|New York|Paris|Dakar",
+"Quel texte fixe l’organisation de l’État et les droits des citoyens ?|La Constitution|Le code de la route|Le règlement de l’école",
+"Quelle est la différence entre droit et devoir ?|Un droit protège, un devoir oblige|Aucune|Un devoir est un cadeau",
+"Quelle attitude montre la sincérité ?|Reconnaître sa faute|Cacher la vérité|Accuser un autre",
+"La corruption freine…|Le développement du pays|La pluie|Le vent",
+"Quelle grande ville du nord est un carrefour commercial ?|Parakou|Grand-Popo|Porto-Novo",
+"Où se trouve le parc de la Pendjari ?|Au nord-ouest|Au sud|Sur la côte"],[
+"Où se trouve le siège de l’Union africaine ?|Addis-Abeba|New York|Dakar",
+"Quelle terre rouge est typique du sud du Bénin ?|La terre de barre|Le sable du désert|La neige",
+"Dans quel département se trouve Ouidah ?|L’Atlantique|Le Borgou|L’Alibori",
+"Dans quel département se trouve Porto-Novo ?|L’Ouémé|Le Mono|Le Zou",
+"Dans quel département se trouve Kandi ?|L’Alibori|Le Borgou|L’Atacora",
+"Quel est le chef-lieu du Mono ?|Lokossa|Dassa-Zoumè|Parakou",
+"Quel est le chef-lieu des Collines ?|Dassa-Zoumè|Lokossa|Natitingou",
+"Quelle est la différence entre commune et arrondissement ?|L’arrondissement est une division de la commune|C’est la même chose|La commune est dans l’arrondissement",
+"La calomnie est-elle punie par la loi ?|Oui, c’est une infraction|Non, jamais|Seulement le dimanche",
+"Où se trouve le siège de l’UEMOA ?|Ouagadougou|Cotonou|Parakou"],[
+"Pourquoi les routes sont-elles importantes pour l’économie ?|Elles permettent de transporter les marchandises|Elles servent à planter|Elles produisent du coton",
+"Pourquoi le port de Cotonou est-il important pour le Niger ?|Le Niger n’a pas d’accès à la mer|Le Niger est une île|Le Niger produit du sel marin",
+"Quel est l’avantage de la séparation des pouvoirs ?|Éviter l’abus de pouvoir|Supprimer les lois|Tout donner au Président",
+"Pourquoi respecter le règlement de l’école ?|Pour vivre ensemble en paix|Pour punir les maîtres|Pour s’ennuyer",
+"Quelle est la différence entre le Parlement et le gouvernement ?|Le Parlement vote les lois, le gouvernement les applique|C’est la même chose|Le gouvernement juge",
+"Pourquoi fête-t-on l’indépendance le 1er août ?|Elle a été proclamée le 1er août 1960|Le Bénin est né un 1er août 1975|C’est le jour du référendum",
+"Quel danger l’alcool présente-t-il pour la famille ?|Violences et pauvreté|Richesse|Bonne santé",
+"Comment réduire les accidents de la route ?|Respecter le code et ne pas boire avant de conduire|Rouler vite|Ne pas mettre de casque",
+"Pourquoi le coton est-il important pour l’économie ?|Il est exporté et fait vivre des paysans|Il remplace l’eau|Il est interdit",
+"Quel lien y a-t-il entre Dahomey et Bénin ?|Dahomey est l’ancien nom du pays|Ce sont deux pays différents|Dahomey est une ville"]]};
+for(var k in A)A[k].forEach(function(l,i){BANK[k][i]=BANK[k][i].concat(l)})})();
+var P={},U={EST:1,ES:1},LN=["Facile","Moyen","Difficile","Très difficile","Excellence"];
+function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function defi(o){
+var s=st.s,c=document.createElement("div");c.className="card";
+c.innerHTML="<h2>🏆 Défi "+s+"</h2><p>5 niveaux de 20 questions mélangées"+(s=="ES"?" (histoire, géographie, civisme, morale)":" (tous les chapitres)")+". Obtiens au moins 10/20 pour débloquer le niveau suivant.</p>";
+LN.forEach(function(n,i){var b=btn((i+1>U[s]?"🔒 ":"")+"Niveau "+(i+1)+" · "+n,"act",function(){run(o,i+1)});b.disabled=i+1>U[s];b.style.display="block";b.style.width="100%";c.appendChild(b)});
+o.appendChild(c);
+}
+function run(o,lv){
+var s=st.s,L=sh(BANK[s][lv-1]).slice(0,20).map(function(x){return x.split("|")}),i=0,n=0;
+function show(){
+o.innerHTML="";var it=L[i],c=document.createElement("div");c.className="card";
+c.innerHTML="<h2>Niveau "+lv+" · Question "+(i+1)+"/20</h2>";
+var q=document.createElement("div");q.className="q";q.textContent=it[0];c.appendChild(q);
+var nx=btn(i==19?"Voir le résultat":"Suivant","act",function(){i++;i<20?show():end()});nx.style.display="none";
+var bs=[];sh(it.slice(1)).forEach(function(t){var b=btn(t,"opt",function(){
+bs.forEach(function(x){x.disabled=true;if(x.textContent==it[1])x.classList.add("ok")});
+if(t==it[1])n++;else b.classList.add("ko");nx.style.display="block"});bs.push(b);c.appendChild(b)});
+c.appendChild(nx);o.appendChild(c);
+}
+function end(){
+o.innerHTML="";var c=document.createElement("div");c.className="card";var ok=n>=10,m="";P[s]=P[s]||{};var rr=P[s][lv]||{b:0,t:0};rr.t++;if(n>rr.b)rr.b=n;P[s][lv]=rr;
+if(ok&&lv==U[s]&&lv<5){U[s]=lv+1;m=" 🔓 Niveau "+(lv+1)+" débloqué !"}saveU();
+c.innerHTML="<h2>Résultat : "+n+" / 20</h2><p>"+(ok?(lv==5?"Bravo, tu es prêt pour le CEP ! 🎉":"Bravo, tu as la moyenne !")+m:"Il faut au moins 10/20. Relis les leçons et réessaie.")+"</p>";
+c.appendChild(btn(ok&&lv<5?"Continuer":"Recommencer","act",function(){render()}));
+o.appendChild(c);
+}
+show();
+}
+var user=null,tab="in";
+function msg(t){$("am").textContent=t}
+function setTab(t){tab=t;$("nmw").style.display=t=="up"?"block":"none";$("go").textContent=t=="up"?"S’inscrire":"Se connecter";$("tin").className=t=="in"?"on":"";$("tup").className=t=="up"?"on":"";msg("")}
+function enterApp(name,u0,p0){U=u0||{EST:1,ES:1};P=p0||{};$("auth").style.display="none";$("app").style.display="block";$("hi").textContent="Bonjour, "+name+" ! 👋";st.m="defi";render()}
+function showAuth(){$("dash").style.display="none";$("acces").style.display="none";["subj","grp","chap","mode","out"].forEach(function(i){$(i).style.display=""});$("app").style.display="none";$("auth").style.display="block";$("pw").value="";setTab("in")}
+function saveU(){}
+render();
+</script>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {getAuth,GoogleAuthProvider,signInWithPopup,createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile,signOut,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import {getFirestore,doc,getDoc,setDoc,getDocs,collection,query,where,updateDoc,serverTimestamp} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+/* 1) Colle ici la configuration de ton projet Firebase (Paramètres du projet > Tes applications > Web) */
+const cfg={apiKey:"AIzaSyBlRERGpK58Ji0pjVzFGPFP-_B1_OYTlGI",authDomain:"excellence-cep-442aa.firebaseapp.com",projectId:"excellence-cep-442aa",storageBucket:"excellence-cep-442aa.firebasestorage.app",messagingSenderId:"875715655682",appId:"1:875715655682:web:ce1a74795e690567994f1b"};
+const ok=cfg.apiKey!=="COLLE_ICI";
+let auth,db,uid=null;
+if(ok){const app=initializeApp(cfg);auth=getAuth(app);auth.languageCode="fr";db=getFirestore(app)}
+const ERR={"auth/invalid-credential":"Email ou mot de passe incorrect.","auth/invalid-email":"Email non valide.","auth/email-already-in-use":"Cet email est déjà inscrit. Clique sur « Connexion ».","auth/weak-password":"Mot de passe trop court (6 caractères minimum).","auth/popup-closed-by-user":"Fenêtre Google fermée.","auth/network-request-failed":"Pas de connexion internet.","auth/too-many-requests":"Trop d’essais. Réessaie dans quelques minutes."};
+const fail=e=>msg(ERR[e.code]||"Une erreur est survenue. Réessaie.");
+const nameOf=u=>u.displayName||(u.email||"").split("@")[0];
+const TEACHER="josephkuita@gmail.com",MS=2592000000;
+const isT=u=>u.email===TEACHER&&u.emailVerified;
+const IDS=["subj","grp","chap","mode","out"];
+const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;e.textContent=x;return e};
+const fmt=d=>new Date(d).toLocaleDateString("fr-FR");
+const calc=a=>{let f=0;a.filter(c=>c.usedAt).sort((x,y)=>x.usedAt.toMillis()-y.usedAt.toMillis()).forEach(c=>{f=Math.max(f,c.usedAt.toMillis())+c.mois*MS});return f};
+const hello=()=>"Bonjour, "+nameOf(auth.currentUser)+" ! 👋";
+async function checkAcces(t){
+let f=0;try{const q=await getDocs(query(collection(db,"codes"),where("usedBy","==",uid)));f=calc(q.docs.map(x=>x.data()))}catch(e){}
+const ok=t||f>Date.now();
+IDS.forEach(i=>$(i).style.display=ok?"":"none");
+$("acces").style.display=ok?"none":"block";
+if(ok){render();$("hi").textContent=hello()+(t?"":" · accès jusqu’au "+fmt(f))}
+else $("cm").textContent=f?"Ton accès a expiré le "+fmt(f)+". Entre un nouveau code.":"";
+}
+async function enter(u){
+uid=u.uid;let p=null,known=false;
+try{const s=await getDoc(doc(db,"users",uid));if(s.exists()){p=s.data();known=true}}catch(e){}
+enterApp(nameOf(u),p&&p.U,p&&p.P);
+if(!known)window.saveU();
+const t=isT(u);$("tb").style.display=t?"inline-block":"none";
+await checkAcces(t);
+}
+window.saveU=function(){if(!uid)return;setDoc(doc(db,"users",uid),{U:U,P:P,email:auth.currentUser.email,name:nameOf(auth.currentUser),maj:Date.now()},{merge:true}).catch(()=>{})};
+window.redeem=async function(){
+const c=$("cd").value.trim().toUpperCase().replace(/\s/g,"");
+if(!c)return $("cm").textContent="Écris ton code.";
+$("cm").textContent="Vérification…";
+try{await updateDoc(doc(db,"codes",c),{usedBy:uid,usedAt:serverTimestamp()});$("cd").value="";await checkAcces(false)}
+catch(e){$("cm").textContent="Code invalide ou déjà utilisé."}
+};
+const cp=(b,c)=>{try{navigator.clipboard.writeText(c);b.textContent="Copié ✓"}catch(e){}};
+window.gen=async function(m){
+const A="ABCDEFGHJKLMNPQRSTUVWXYZ23456789",b=crypto.getRandomValues(new Uint8Array(8));
+let c="CEP-";for(let i=0;i<8;i++){c+=A[b[i]%A.length];if(i==3)c+="-"}
+try{await setDoc(doc(db,"codes",c),{mois:m,creeLe:Date.now(),usedBy:null,usedAt:null});
+const n=$("nc");n.textContent="";const d=el("div","ret","");d.appendChild(el("b","",c+" · "+m+" mois"));d.appendChild(document.createElement("br"));
+const bt=el("button","act","Copier");bt.onclick=()=>cp(bt,c);d.appendChild(bt);n.appendChild(d);load()}
+catch(e){$("nc").textContent="Erreur : mets à jour les règles Firestore."}
+};
+async function load(){
+const box=$("dl"),cl=$("cl");
+try{
+const [qu,qc]=await Promise.all([getDocs(collection(db,"users")),getDocs(collection(db,"codes"))]);
+const codes=qc.docs.map(x=>({id:x.id,...x.data()}));
+cl.textContent="";const libres=codes.filter(c=>!c.usedBy).sort((a,b)=>b.creeLe-a.creeLe);
+if(!libres.length)cl.textContent="Aucun code disponible.";
+libres.slice(0,30).forEach(c=>{const b=el("button","chip",c.id+" · "+c.mois+" mois");b.onclick=()=>cp(b,c.id);cl.appendChild(b)});
+const by={};codes.filter(c=>c.usedBy).forEach(c=>(by[c.usedBy]=by[c.usedBy]||[]).push(c));
+const rows=qu.docs.map(x=>({id:x.id,...x.data()})).sort((a,b)=>(b.maj||0)-(a.maj||0));
+box.textContent="";$("dn").textContent=rows.length+" élève(s) inscrit(s).";
+rows.forEach(r=>{
+const c=el("div","stu","");c.appendChild(el("b","",r.name||"(sans nom)"));c.appendChild(el("small","",r.email||""));
+const f=calc(by[r.id]||[]);
+c.appendChild(el("small","",f>Date.now()?"Accès jusqu’au "+fmt(f):f?"Accès expiré le "+fmt(f):"Pas encore de code"));
+["EST","ES"].forEach(m=>{const sc=(r.P&&r.P[m])||{};const t=Object.keys(sc).sort().map(k=>"N"+k+" : "+sc[k].b+"/20 ("+sc[k].t+" essai"+(sc[k].t>1?"s":"")+")").join(" · ");
+c.appendChild(el("span","",m+" : niveau "+((r.U&&r.U[m])||1)+"/5"+(t?" — "+t:"")));c.appendChild(document.createElement("br"))});
+c.appendChild(el("small","","Dernière activité : "+(r.maj?fmt(r.maj):"—")));
+box.appendChild(c)});
+}catch(e){box.textContent="Accès refusé. Vérifie les règles Firestore et connecte-toi avec Google."}
+}
+window.dash=function(){
+const d=$("dash");
+if(d.style.display=="block"){d.style.display="none";IDS.forEach(i=>$(i).style.display="");render();return}
+IDS.forEach(i=>$(i).style.display="none");d.style.display="block";$("dl").textContent="Chargement…";load();
+};
+window.google=function(){if(!ok)return msg("Configuration Firebase manquante.");signInWithPopup(auth,new GoogleAuthProvider()).catch(fail)};
+window.go=async function(){
+if(!ok)return msg("Configuration Firebase manquante.");
+const em=$("em").value.trim(),pw=$("pw").value,nm=$("nm").value.trim();
+if(tab=="up"&&!nm)return msg("Écris ton nom complet.");
+try{
+if(tab=="up"){const c=await createUserWithEmailAndPassword(auth,em,pw);await updateProfile(c.user,{displayName:nm});await enter(auth.currentUser)}
+else await signInWithEmailAndPassword(auth,em,pw);
+}catch(e){fail(e)}
+};
+window.out=function(){uid=null;if(ok)signOut(auth)};
+if(ok)onAuthStateChanged(auth,u=>{if(u)enter(u);else showAuth()});else showAuth();
+</script>
+</body></html>
